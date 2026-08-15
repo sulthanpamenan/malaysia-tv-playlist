@@ -9,10 +9,10 @@ This repository automatically scrapes, parses, and refreshes dynamic CDN tokens 
 Use either of the links below to import into your IPTV player:
 
 * **M3U Playlist (Standard IPTV Player)**:
-  `https://raw.githubusercontent.com/sulthanpamenan/malaysia-tv-playlist/main/playlist.m3u`
+  `https://sulthanpamenan.github.io/malaysia-tv-playlist/playlist.m3u`
 
 * **Plain Text Playlist**:
-  `https://raw.githubusercontent.com/sulthanpamenan/malaysia-tv-playlist/main/playlist.txt`
+  `https://sulthanpamenan.github.io/malaysia-tv-playlist/playlist.txt`
 
 ---
 
