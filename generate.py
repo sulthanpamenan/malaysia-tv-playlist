@@ -12,47 +12,46 @@ def run_scraper():
     valid_channels = []
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(user_agent=ua, permissions=["autoplay"])
+        # Menambahkan flag autoplay-policy di tingkat browser launch
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--autoplay-policy=no-user-gesture-required"]
+        )
+        context = browser.new_context(user_agent=ua)
         page = context.new_page()
 
-        print("[*] Tahap 1: Membuka indeks situs & mengumpulkan semua link channel dari grid...")
+        print("[*] Tahap 1: Mengambil semua tautan channel dari grid...")
         try:
             page.goto(BASE_URL, timeout=40000, wait_until="domcontentloaded")
             page.wait_for_timeout(3000)
 
-            # Mengambil semua tautan <a> yang mengarah ke halaman channel
             links = page.locator("a[href*='malaysia-tv.net/']").all()
             found_urls = set()
 
             for link in links:
                 href = link.get_attribute("href")
-                if href and href != BASE_URL and not href.endswith(".png") and not href.endswith(".jpg"):
-                    # Pastikan URL bersih dari fragment
+                if href and href != BASE_URL and not href.endswith((".png", ".jpg", ".jpeg", ".css", ".js")):
                     clean_url = href.split("#")[0]
                     found_urls.add(clean_url)
 
-            # Tambahkan halaman awal
             found_urls.add(BASE_URL)
-            print(f"[✓] Berhasil menemukan {len(found_urls)} URL halaman channel di situs!")
+            print(f"[✓] Ditemukan {len(found_urls)} halaman channel.")
 
         except Exception as e:
-            print(f"[!] Error saat mengambil indeks grid: {e}")
+            print(f"[!] Error membaca grid: {e}")
             browser.close()
             return []
 
         page.close()
 
-        print("\n[*] Tahap 2: Mengekstrak token M3U8 untuk setiap channel...")
+        print("\n[*] Tahap 2: Mengekstrak stream M3U8 secara otomatis...")
         for ch_url in sorted(found_urls):
-            # Membuat nama channel bersih dari URL slug
             slug = ch_url.rstrip("/").split("/")[-1].replace("-live", "").replace("-", " ").title()
             ch_page = context.new_page()
-            print(f"[*] Scraping channel: {slug} ({ch_url})...")
+            print(f"[*] Scraping channel: {slug}...")
 
             stream_url = None
 
-            # Tangkap network request ke BunnyCDN / Streamer
             def handle_request(request):
                 nonlocal stream_url
                 req_url = request.url
@@ -66,7 +65,7 @@ def run_scraper():
                 ch_page.goto(ch_url, timeout=35000, wait_until="domcontentloaded")
                 ch_page.wait_for_timeout(2000)
 
-                # Coba klik player jika ada iframe
+                # Trigger click pada player jika tertahan
                 try:
                     for frame in ch_page.frames:
                         play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button")
@@ -75,7 +74,6 @@ def run_scraper():
                 except Exception:
                     pass
 
-                # Tunggu request .m3u8 tertangkap
                 for _ in range(8):
                     if stream_url:
                         break
@@ -85,13 +83,13 @@ def run_scraper():
                 print(f"[!] Error saat memuat {slug}: {e}")
 
             if stream_url:
-                print(f"[✓] Berhasil mengekstrak stream untuk {slug}!")
+                print(f"[✓] Berhasil: {slug}")
                 valid_channels.append({
                     "name": slug,
                     "url": f"{stream_url}{header_pipe}"
                 })
             else:
-                print(f"[!] Stream M3U8 tidak ditemukan untuk {slug}")
+                print(f"[!] Gagal menemukan stream untuk {slug}")
 
             ch_page.close()
 
@@ -103,7 +101,7 @@ def main():
     channels = run_scraper()
 
     if not channels:
-        print("[X] Gagal mengekstrak channel.")
+        print("[X] Tidak ada channel yang berhasil diekstrak.")
         sys.exit(1)
 
     m3u_lines = ["#EXTM3U"]
@@ -124,7 +122,7 @@ def main():
     with open("playlist.m3u", "w", encoding="utf-8") as f:
         f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran dari malaysia-tv.net!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran!")
 
 if __name__ == "__main__":
     main()
