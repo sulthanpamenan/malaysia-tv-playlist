@@ -12,7 +12,6 @@ def run_scraper():
     valid_channels = []
 
     with sync_playwright() as p:
-        # Menambahkan flag autoplay-policy di tingkat browser launch
         browser = p.chromium.launch(
             headless=True,
             args=["--autoplay-policy=no-user-gesture-required"]
@@ -20,31 +19,41 @@ def run_scraper():
         context = browser.new_context(user_agent=ua)
         page = context.new_page()
 
-        print("[*] Tahap 1: Mengambil semua tautan channel dari grid...")
+        print("[*] Tahap 1: Membuka indeks & Melakukan Auto-Scroll untuk 72 Channel Grid...")
         try:
-            page.goto(BASE_URL, timeout=40000, wait_until="domcontentloaded")
+            page.goto(BASE_URL, timeout=50000, wait_until="domcontentloaded")
             page.wait_for_timeout(3000)
 
+            # Lakukan Auto-Scroll bertahap ke bawah halaman agar Lazy Loading memuat seluruh 72 channel
+            for _ in range(8):
+                page.mouse.wheel(0, 1500)
+                page.wait_for_timeout(1000)
+
+            # Ambil semua link channel dari grid
             links = page.locator("a[href*='malaysia-tv.net/']").all()
             found_urls = set()
 
+            # URL non-channel yang wajib diabaikan
+            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js"]
+
             for link in links:
                 href = link.get_attribute("href")
-                if href and href != BASE_URL and not href.endswith((".png", ".jpg", ".jpeg", ".css", ".js")):
-                    clean_url = href.split("#")[0]
-                    found_urls.add(clean_url)
+                if href:
+                    clean_url = href.split("#")[0].rstrip("/") + "/"
+                    if not any(kw in clean_url for kw in ignore_keywords) and clean_url != "https://malaysia-tv.net/":
+                        found_urls.add(clean_url)
 
             found_urls.add(BASE_URL)
-            print(f"[✓] Ditemukan {len(found_urls)} halaman channel.")
+            print(f"[✓] Berhasil mendeteksi {len(found_urls)} URL channel dari grid!")
 
         except Exception as e:
-            print(f"[!] Error membaca grid: {e}")
+            print(f"[!] Error saat membaca grid halaman: {e}")
             browser.close()
             return []
 
         page.close()
 
-        print("\n[*] Tahap 2: Mengekstrak stream M3U8 secara otomatis...")
+        print("\n[*] Tahap 2: Mengekstrak token M3U8 untuk semua channel...")
         for ch_url in sorted(found_urls):
             slug = ch_url.rstrip("/").split("/")[-1].replace("-live", "").replace("-", " ").title()
             ch_page = context.new_page()
@@ -55,7 +64,7 @@ def run_scraper():
             def handle_request(request):
                 nonlocal stream_url
                 req_url = request.url
-                if ".m3u8" in req_url and ("b-cdn.net" in req_url or "streamer" in req_url or "playlist" in req_url):
+                if ".m3u8" in req_url and ("b-cdn.net" in req_url or "streamer" in req_url or "playlist" in req_url or "live" in req_url):
                     if not stream_url:
                         stream_url = req_url
 
@@ -63,12 +72,12 @@ def run_scraper():
 
             try:
                 ch_page.goto(ch_url, timeout=35000, wait_until="domcontentloaded")
-                ch_page.wait_for_timeout(2000)
+                ch_page.wait_for_timeout(2500)
 
-                # Trigger click pada player jika tertahan
+                # Klik otomatis jika video butuh interaksi pengguna
                 try:
                     for frame in ch_page.frames:
-                        play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button")
+                        play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster")
                         if play_btn.count() > 0:
                             play_btn.first.click(timeout=1500)
                 except Exception:
@@ -89,7 +98,7 @@ def run_scraper():
                     "url": f"{stream_url}{header_pipe}"
                 })
             else:
-                print(f"[!] Gagal menemukan stream untuk {slug}")
+                print(f"[!] Stream M3U8 tidak ditemukan untuk {slug}")
 
             ch_page.close()
 
@@ -122,7 +131,7 @@ def main():
     with open("playlist.m3u", "w", encoding="utf-8") as f:
         f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran ke playlist M3U!")
 
 if __name__ == "__main__":
     main()
