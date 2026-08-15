@@ -1,5 +1,6 @@
 import sys
 import re
+import os
 from playwright.sync_api import sync_playwright
 
 BASE_URL = "https://malaysia-tv.net/tv3-live/"
@@ -19,32 +20,31 @@ def run_scraper():
         context = browser.new_context(user_agent=ua)
         page = context.new_page()
 
-        print("[*] Tahap 1: Membuka indeks & Melakukan Auto-Scroll untuk 72 Channel Grid...")
+        print("[*] Tahap 1: Membuka indeks & me-scan seluruh 72 channel grid...")
+        found_urls = set()
+        
         try:
             page.goto(BASE_URL, timeout=50000, wait_until="domcontentloaded")
             page.wait_for_timeout(3000)
 
-            # Lakukan Auto-Scroll bertahap ke bawah halaman agar Lazy Loading memuat seluruh 72 channel
-            for _ in range(8):
+            # Auto-scroll bertahap sampai paling bawah
+            for _ in range(10):
                 page.mouse.wheel(0, 1500)
-                page.wait_for_timeout(1000)
+                page.wait_for_timeout(800)
 
-            # Ambil semua link channel dari grid
-            links = page.locator("a[href*='malaysia-tv.net/']").all()
-            found_urls = set()
+            # Ambil semua link dari elemen gambar/grid di halaman
+            all_links = page.locator("a").all()
+            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js", "#"]
 
-            # URL non-channel yang wajib diabaikan
-            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js"]
-
-            for link in links:
+            for link in all_links:
                 href = link.get_attribute("href")
-                if href:
+                if href and "malaysia-tv.net" in href:
                     clean_url = href.split("#")[0].rstrip("/") + "/"
                     if not any(kw in clean_url for kw in ignore_keywords) and clean_url != "https://malaysia-tv.net/":
                         found_urls.add(clean_url)
 
             found_urls.add(BASE_URL)
-            print(f"[✓] Berhasil mendeteksi {len(found_urls)} URL channel dari grid!")
+            print(f"[✓] Berhasil menemukan {len(found_urls)} URL channel dari grid!")
 
         except Exception as e:
             print(f"[!] Error saat membaca grid halaman: {e}")
@@ -53,7 +53,7 @@ def run_scraper():
 
         page.close()
 
-        print("\n[*] Tahap 2: Mengekstrak token M3U8 untuk semua channel...")
+        print("\n[*] Tahap 2: Mengekstrak token M3U8...")
         for ch_url in sorted(found_urls):
             slug = ch_url.rstrip("/").split("/")[-1].replace("-live", "").replace("-", " ").title()
             ch_page = context.new_page()
@@ -71,19 +71,19 @@ def run_scraper():
             ch_page.on("request", handle_request)
 
             try:
-                ch_page.goto(ch_url, timeout=35000, wait_until="domcontentloaded")
-                ch_page.wait_for_timeout(2500)
+                ch_page.goto(ch_url, timeout=30000, wait_until="domcontentloaded")
+                ch_page.wait_for_timeout(2000)
 
-                # Klik otomatis jika video butuh interaksi pengguna
+                # Klik player jika tertahan
                 try:
                     for frame in ch_page.frames:
                         play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster")
                         if play_btn.count() > 0:
-                            play_btn.first.click(timeout=1500)
+                            play_btn.first.click(timeout=1000)
                 except Exception:
                     pass
 
-                for _ in range(8):
+                for _ in range(6):
                     if stream_url:
                         break
                     ch_page.wait_for_timeout(1000)
@@ -113,25 +113,24 @@ def main():
         print("[X] Tidak ada channel yang berhasil diekstrak.")
         sys.exit(1)
 
-    m3u_lines = ["#EXTM3U"]
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     referer = "https://malaysia-tv.net/"
 
+    m3u_lines = ["#EXTM3U\n"]
     for ch in channels:
-        m3u_lines.append(f'#EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) {ch["name"]}')
-        m3u_lines.append(f'#EXTVLCOPT:http-user-agent={ua}')
-        m3u_lines.append(f'#EXTVLCOPT:http-referrer={referer}')
-        m3u_lines.append(ch["url"])
+        m3u_lines.append(f'#EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) {ch["name"]}\n')
+        m3u_lines.append(f'#EXTVLCOPT:http-user-agent={ua}\n')
+        m3u_lines.append(f'#EXTVLCOPT:http-referrer={referer}\n')
+        m3u_lines.append(f'{ch["url"]}\n')
 
-    m3u_content = "\r\n".join(m3u_lines)
+    m3u_content = "".join(m3u_lines)
 
-    with open("playlist.txt", "w", encoding="utf-8") as f:
-        f.write(m3u_content)
+    # Simpan file secara aman (UTF-8 tanpa BOM)
+    for filename in ["playlist.txt", "playlist.m3u"]:
+        with open(filename, "w", encoding="utf-8", newline="\n") as f:
+            f.write(m3u_content)
 
-    with open("playlist.m3u", "w", encoding="utf-8") as f:
-        f.write(m3u_content)
-
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran ke playlist M3U!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran ke {os.path.abspath('playlist.m3u')}!")
 
 if __name__ == "__main__":
     main()
