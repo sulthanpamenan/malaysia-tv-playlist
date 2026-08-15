@@ -1,5 +1,4 @@
 import sys
-import re
 import os
 from playwright.sync_api import sync_playwright
 
@@ -15,7 +14,7 @@ def run_scraper():
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=True,
-            args=["--autoplay-policy=no-user-gesture-required"]
+            args=["--autoplay-policy=no-user-gesture-required", "--no-sandbox"]
         )
         context = browser.new_context(user_agent=ua)
         page = context.new_page()
@@ -24,17 +23,17 @@ def run_scraper():
         found_urls = set()
         
         try:
-            page.goto(BASE_URL, timeout=50000, wait_until="domcontentloaded")
-            page.wait_for_timeout(3000)
+            page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
+            page.wait_for_timeout(4000)
 
-            # Auto-scroll bertahap sampai paling bawah
-            for _ in range(10):
-                page.mouse.wheel(0, 1500)
-                page.wait_for_timeout(800)
+            # Scroll lebih lambat agar lazy loading memuat semua gambar/link
+            for _ in range(12):
+                page.mouse.wheel(0, 1200)
+                page.wait_for_timeout(600)
 
-            # Ambil semua link dari elemen gambar/grid di halaman
+            # Ambil semua <a> yang ada di dalam main wrapper
             all_links = page.locator("a").all()
-            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js", "#"]
+            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js", "#", "facebook.com", "twitter.com"]
 
             for link in all_links:
                 href = link.get_attribute("href")
@@ -44,7 +43,7 @@ def run_scraper():
                         found_urls.add(clean_url)
 
             found_urls.add(BASE_URL)
-            print(f"[✓] Berhasil menemukan {len(found_urls)} URL channel dari grid!")
+            print(f"[✓] Berhasil mengindeks {len(found_urls)} URL dari grid situs!")
 
         except Exception as e:
             print(f"[!] Error saat membaca grid halaman: {e}")
@@ -64,41 +63,43 @@ def run_scraper():
             def handle_request(request):
                 nonlocal stream_url
                 req_url = request.url
-                if ".m3u8" in req_url and ("b-cdn.net" in req_url or "streamer" in req_url or "playlist" in req_url or "live" in req_url):
+                # Cari pola manifest m3u8 atau hls stream
+                if ".m3u8" in req_url and ("b-cdn.net" in req_url or "streamer" in req_url or "playlist" in req_url or "live" in req_url or "hls" in req_url):
                     if not stream_url:
                         stream_url = req_url
 
             ch_page.on("request", handle_request)
 
             try:
-                ch_page.goto(ch_url, timeout=30000, wait_until="domcontentloaded")
-                ch_page.wait_for_timeout(2000)
+                ch_page.goto(ch_url, timeout=40000, wait_until="domcontentloaded")
+                ch_page.wait_for_timeout(3000)
 
-                # Klik player jika tertahan
+                # Paksa trigger play pada player iframe
                 try:
                     for frame in ch_page.frames:
-                        play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster")
+                        play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster, iframe")
                         if play_btn.count() > 0:
                             play_btn.first.click(timeout=1000)
                 except Exception:
                     pass
 
-                for _ in range(6):
+                # Berikan jeda toleransi lebih lama agar CDN merespons token
+                for _ in range(10):
                     if stream_url:
                         break
                     ch_page.wait_for_timeout(1000)
 
             except Exception as e:
-                print(f"[!] Error saat memuat {slug}: {e}")
+                print(f"[!] Error/Timeout saat memuat {slug}: {e}")
 
             if stream_url:
-                print(f"[✓] Berhasil: {slug}")
+                print(f"[✓] Berhasil M3U8: {slug}")
                 valid_channels.append({
                     "name": slug,
                     "url": f"{stream_url}{header_pipe}"
                 })
             else:
-                print(f"[!] Stream M3U8 tidak ditemukan untuk {slug}")
+                print(f"[x] Bukan M3U8 / Embed luar: {slug}")
 
             ch_page.close()
 
@@ -125,12 +126,11 @@ def main():
 
     m3u_content = "".join(m3u_lines)
 
-    # Simpan file secara aman (UTF-8 tanpa BOM)
     for filename in ["playlist.txt", "playlist.m3u"]:
         with open(filename, "w", encoding="utf-8", newline="\n") as f:
             f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran ke {os.path.abspath('playlist.m3u')}!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran M3U8 aktif ke playlist.m3u!")
 
 if __name__ == "__main__":
     main()
