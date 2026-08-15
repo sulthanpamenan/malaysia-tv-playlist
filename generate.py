@@ -1,10 +1,15 @@
 import sys
 from playwright.sync_api import sync_playwright
 
-# Daftar channel dengan URL halaman yang terverifikasi di malaysia-tv.net
+# Daftar seluruh channel aktif di situs malaysia-tv.net
 CHANNELS = [
     {"name": "TV3", "url": "https://malaysia-tv.net/tv3-live/", "logo": "https://upload.wikimedia.org/wikipedia/commons/2/22/TV3_logo_%28Malaysia%29.svg"},
-    {"name": "Astro Awani", "url": "https://malaysia-tv.net/astro-awani-live/", "logo": "https://upload.wikimedia.org/wikipedia/commons/6/60/Astro_Awani.png"},
+    {"name": "TV9", "url": "https://malaysia-tv.net/tv9/", "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e5/TV9_Logo_%28Malaysia%29.svg"},
+    {"name": "NTV7 / DidikTV", "url": "https://malaysia-tv.net/ntv7/", "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/NTV7_logo.svg"},
+    {"name": "8TV", "url": "https://malaysia-tv.net/8tv/", "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4e/8TV_logo.svg"},
+    {"name": "TV Alhijrah", "url": "https://malaysia-tv.net/tv-alhijrah-live/", "logo": "https://upload.wikimedia.org/wikipedia/commons/4/41/TV_Alhijrah_logo.png"},
+    {"name": "Astro Awani", "url": "https://malaysia-tv.net/astro-awani/", "logo": "https://upload.wikimedia.org/wikipedia/commons/6/60/Astro_Awani.png"},
+    {"name": "Bernama TV", "url": "https://malaysia-tv.net/bernama-tv-live/", "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bernama_TV.png"},
 ]
 
 def scrape_bcdn_streams():
@@ -24,7 +29,7 @@ def scrape_bcdn_streams():
             
             stream_url = None
 
-            # Tangkap request jaringan yang mengarah ke .m3u8 di BunnyCDN
+            # Tangkap request jaringan yang mengarah ke .m3u8 di BunnyCDN / Streamer
             def handle_request(request):
                 nonlocal stream_url
                 req_url = request.url
