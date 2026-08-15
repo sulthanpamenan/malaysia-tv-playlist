@@ -1,14 +1,14 @@
 # 🇲🇾 Malaysia TV Net IPTV Playlist Auto-Generator
 
-Repositori ini secara otomatis mengikis (*scrape*), me-parse, dan menyegarkan token CDN dinamis dari saluran televisi yang tersedia di `malaysia-tv.net`. Hasilnya disajikan dalam bentuk playlist format `.m3u` dan `.txt` yang siap dipasang pada berbagai aplikasi IPTV player (TiviMate, OTT Navigator, VLC, PlayerX, dll.).
+This repository automatically scrapes, parses, and refreshes dynamic CDN tokens from television channels available on `malaysia-tv.net`. The output is generated as `.m3u` and `.txt` playlists, ready to be added to various IPTV player applications (such as TiviMate, OTT Navigator, VLC, PlayerX, etc.).
 
 ---
 
-## 🔗 Tautan Playlist M3U
+## 🔗 M3U Playlist Links
 
-Gunakan salah satu tautan di bawah ini untuk dimasukkan ke dalam aplikasi IPTV Player kamu:
+Use either of the links below to import into your IPTV player:
 
-* **M3U Playlist (Standar IPTV Player)**:
+* **M3U Playlist (Standard IPTV Player)**:
   `https://raw.githubusercontent.com/sulthanpamenan/malaysia-tv-playlist/main/playlist.m3u`
 
 * **Plain Text Playlist**:
@@ -16,43 +16,43 @@ Gunakan salah satu tautan di bawah ini untuk dimasukkan ke dalam aplikasi IPTV P
 
 ---
 
-## ⚡ Fitur Utama
+## ⚡ Key Features
 
-* **Otomatis 24/7**: Diperbarui setiap **3 jam sekali** menggunakan GitHub Actions untuk memastikan token BunnyCDN (`expires` & `token`) tidak kedaluwarsa.
-* **Bebas VPN**: Seluruh saluran yang diekstrak dalam playlist ini dapat diputar langsung dari IP Indonesia / Internasional tanpa memerlukan VPN.
-* **Metadata Lengkap**: Dilengkapi atribut `tvg-id`, `tvg-name`, `tvg-logo`, dan `group-title` (Kategori) resmi untuk integrasi EPG yang rapi.
-* **Self-Healing Grid Scraper**: Menggunakan Playwright untuk me-scan seluruh grid situs secara dinamis. Jika ada saluran baru yang ditambahkan di web sumber, saluran tersebut akan otomatis terdeteksi.
+* **Automated 24/7**: Updated every **3 hours** via GitHub Actions to ensure BunnyCDN tokens (`expires` & `token`) never expire.
+* **VPN Free**: All extracted channel streams in this playlist can be played directly from Indonesian / International IPs without requiring a VPN.
+* **Complete Metadata**: Includes official `tvg-id`, `tvg-name`, `tvg-logo`, and `group-title` (Category) attributes for clean EPG integration.
+* **Self-Healing Grid Scraper**: Uses Playwright to dynamically scan the entire source site grid. If new channels are added to the source website, they will automatically be detected and included.
 
 ---
 
-## 📺 Kategori Saluran (Group Titles)
+## 📺 Channel Categories (Group Titles)
 
-Daftar saluran dalam playlist ini dikelompokkan ke dalam kategori resmi sebagai berikut:
+Channels in this playlist are categorized into official groups as follows:
 
-| Kategori | Deskripsi | Contoh Channel |
+| Category | Description | Example Channels |
 | :--- | :--- | :--- |
-| **General** | Siaran umum/multigenre | TV3 |
-| **News** | Berita & Informasi | Astro Awani, Al Jazeera, Scripps News, NBC News NOW |
-| **Sports** | Olahraga & Live Match | beIN Sports, Eurosport, WWE Network, AFL TV, Bola Sepak |
-| **Movies** | Film Layar Lebar | Bollywood Prime, Pitaara TV, Miramax Movie Channel |
-| **Entertainment** | Hiburan & Variety Show | Shemaroo Bollywood, FilmRise, TV One, Nosey |
-| **Documentary** | Pengetahuan & Alam | BBC Earth, The Unexplained Zone |
-| **Lifestyle** | Gaya Hidup & Travel | GoUSA TV |
-| **Music** | Video Musik | Shemaroo Songs, Mastiii |
-| **Series** | Serial Drama TV | Shemaroo Umang, ION Television |
+| **General** | General / Multi-genre broadcasting | TV3 |
+| **News** | News & Information | Astro Awani, Al Jazeera, Scripps News, NBC News NOW |
+| **Sports** | Sports & Live Matches | beIN Sports, Eurosport, WWE Network, AFL TV, Bola Sepak |
+| **Movies** | Feature Films | Bollywood Prime, Pitaara TV, Miramax Movie Channel |
+| **Entertainment** | Entertainment & Variety Shows | Shemaroo Bollywood, FilmRise, TV One, Nosey |
+| **Documentary** | Knowledge & Nature | BBC Earth, The Unexplained Zone |
+| **Lifestyle** | Travel & Lifestyle | GoUSA TV |
+| **Music** | Music Videos | Shemaroo Songs, Mastiii |
+| **Series** | TV Drama Series | Shemaroo Umang, ION Television |
 
 ---
 
-## ⚙️ Cara Kerja Sistem
+## ⚙️ How It Works
 
-1. **GitHub Actions Workflow** berjalan otomatis setiap 3 jam.
-2. **Playwright (Headless Chromium)** membuka situs sumber, me-scroll seluruh grid tampilan, dan menembak halaman siaran.
-3. Skrip menangkap permintaan jaringan (*network intercept*) yang berisi URL manifest `.m3u8` beserta token akses aktif.
-4. Skrip melakukan pencocokan metadata dengan database lokal dan menyusun ulang file `playlist.m3u`.
-5. Hasil pembaruan otomatis di-*commit* dan di-*push* kembali ke repositori ini.
+1. **GitHub Actions Workflow** runs automatically every 3 hours.
+2. **Playwright (Headless Chromium)** opens the source website, scrolls through the full grid display, and visits each stream page.
+3. The script intercepts network requests (*network intercept*) containing valid `.m3u8` manifest URLs alongside active access tokens.
+4. The script maps channel metadata against an internal database and regenerates the `playlist.m3u` file.
+5. Updated files are automatically committed and pushed back to this repository.
 
 ---
 
-## ⚠️ Penolakan Tanggung Jawab (Disclaimer)
+## ⚠️ Disclaimer
 
-Repositori ini tidak menyimpan, meng-host, atau menyiarkan konten media apa pun secara langsung. Seluruh tautan siaran diekstrak secara otomatis dari domain publik penyedia siaran. Proyek ini dibuat murni untuk tujuan pendidikan dan otomatisasi pribadi.
+This repository does not store, host, or broadcast any media content directly. All stream links are automatically extracted from publicly accessible domains. This project is created purely for educational purposes and personal automation.
