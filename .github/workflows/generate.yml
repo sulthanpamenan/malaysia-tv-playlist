@@ -2,6 +2,7 @@ name: Generate Malaysia TV Net Playlist
 
 on:
   schedule:
+    # Berjalan otomatis setiap 3 jam agar token BunnyCDN tidak expired
     - cron: '0 */3 * * *'
   workflow_dispatch:
 
@@ -12,6 +13,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Mengambil seluruh riwayat commit agar sinkronisasi rebase lancar
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -33,4 +36,5 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add playlist.m3u playlist.txt
         git commit -m "auto: Update Malaysia TV Net Link" || exit 0
-        git push
+        git pull --rebase origin main
+        git push origin main
