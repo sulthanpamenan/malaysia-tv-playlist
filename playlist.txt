@@ -6,7 +6,7 @@ https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/1/720p.m3u8|User-Agent=Mozil
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) ?Tierand=1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_1.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://live-manifest.production-public.tubi.io/live/95479c29-c997-4f1d-9feb-b5a4981504aa/playlist.m3u8?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiVVMiLCJkZXZpY2VfaWQiOiI5MjU0NzRmZC0yZmI5LTRmOWMtYmQ1OS1hZjZjNmFmZWU0ZGYiLCJleHAiOjE3NzU4NDA4ODgsImlzcyI6ImxpdmVfbmV3c19tYW5pZmVzdCIsInBsYXRmb3JtIjoiV0VCIiwicnNzIjoiYXA6c2NyaXBwcy1uZXdzMi1LT1Nkb0ciLCJ1c2VyX2lkIjowfQ.7ybekjwTd4PKPM-ANMgkW5DhakozeDSVi80Uqw7Z3tlhb_xSvF9YFXflp7Wl1YdC8Y9jyFjtzRmPH4lmE_U2RA&tb.sid=6d8b32c5-dd09-451c-ac7e-734edf359a42&ap-fb=aHR0cHM6Ly9saXZlLW1hbmlmZXN0LnByb2R1Y3Rpb24tcHVibGljLnR1YmkuaW8vbGl2ZS85NTQ3OWMyOS1jOTk3LTRmMWQtOWZlYi1iNWE0OTgxNTA0YWEvcGxheWxpc3QubTN1OD90b2tlbj1leUpoYkdjaU9pSklVelV4TWlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKamIzVnVkSEo1SWpvaVZWTWlMQ0prWlhacFkyVmZhV1FpT2lJNU1qVTBOelJtWkMweVptSTVMVFJtT1dNdFltUTFPUzFoWmpaak5tRm1aV1UwWkdZaUxDSmxlSEFpT2pFM056VTROREE0T0Rnc0ltbHpjeUk2SW14cGRtVmZibVYzYzE5dFlXNXBabVZ6ZENJc0luQnNZWFJtYjNKdElqb2lWMFZDSWl3aWNuTnpJam9pY21NNmFIUjBjSE02THk5aFpXZHBjeTFqYkc5MVpHWnliMjUwTFRFdWRIVmlhUzUyYVdSbGJ5OW1aR1UxWXpJNE1DMWlOamd3TFRSa05EUXRPV1U0WWkwNVl6SmlOV1EwTTJVME1UZ3ZjR3hoZVd4cGMzUXViVE4xT0NJc0luVnpaWEpmYVdRaU9qQjkueWFCNC1DUW42SHhEa21odktWd3VMRHZld1V4Xzk5YmNFcE9tSWhNRW5FUkdEWnNWYTJXRms0VG5aZ2FLMjNQcTFLZGNZXzFJTzVWbnI5WWNCbndMU1EmdGIuc2lkPWQ0YzAyOWEyLWFlYjAtNDVlZi05MmExLTBmMGMxYjU5NDRmNA&app_id=tubitv&app_mode=DEFAULT_MODE&content_id=578086&content_type=mp4&device_id=925474fd-2fb9-4f9c-bd59-af6c6afee4df&language=en&now_pos=0&pub_id=a92bddf73b0f624e8598d4d631a928d4&vpaid_enabled=false&origin=deeplink&gdpr=0&platform=WEB&ap.pt=2&ap.furl=0|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Afl
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -34,7 +34,7 @@ https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_1.m3u8|User-Agen
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Bola Sepak
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786787832&token=-tM3xdamEL4kXJfRGVjMSa-810sL2KzfilTv32-3a84|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786791195&token=qPuMhKt2EkaSvXb2ySxNs7o13ewfyWXCZFkOrEJ7gnw|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Drama Sangat
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -110,7 +110,7 @@ https://live.mana2.my/SukeTv/index.m3u8?auth_key=1774011116-a5cb46f1c8c442098b7b
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Tv3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786788382&token=rgMjFX8YjDfvK3mvhqWyX2KLdegabJKerdrALdQDKjA|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786791749&token=0xuJiLleAh9fDo8qIxDkqHMB4NN0eEGGc1pjpQzIkJ0|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Unxplained Zone
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
