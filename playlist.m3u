@@ -6,7 +6,7 @@ https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/1/720p.m3u8|User-Agent=Mozil
 #EXTINF:-1 tvg-id="?Tierand=1.tv" tvg-name="?Tierand=1" tvg-logo="" group-title="General", ?Tierand=1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://live-hls-web-aje-fa.getaj.net/AJE/05.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_1.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="AFL.au" tvg-name="AFL TV" tvg-logo="" group-title="Sports", AFL TV
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -34,7 +34,7 @@ https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_1.m3u8|User-Agen
 #EXTINF:-1 tvg-id="BolaSepak.my" tvg-name="Bola Sepak" tvg-logo="" group-title="Sports", Bola Sepak
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786793180&token=MSeTBrf1zGs_hI6S3EXNUVmf67ikWStd8Eo7NcDD_sE|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786798356&token=t-9FIA0hgwcLerrKx2Z6MFjH_2umKcImgUmKnxUgLmk|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="DramaSangat.tv" tvg-name="Drama Sangat" tvg-logo="" group-title="General", Drama Sangat
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -110,7 +110,7 @@ https://live.mana2.my/SukeTv/index.m3u8?auth_key=1774011116-a5cb46f1c8c442098b7b
 #EXTINF:-1 tvg-id="TV3.my" tvg-name="TV3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/TV3_logo_%28Malaysia%29.svg" group-title="General", TV3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786793730&token=RKPRKshRtw4ng1jQZwa6z2s8jwAkF2LxDD3qxi4ZACk|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786798906&token=gEXdHhZfFURNDLZ4V2zV11NGsqI-eeqLysYwV1dHzRY|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="UnxplainedZone.tv" tvg-name="Unxplained Zone" tvg-logo="" group-title="General", Unxplained Zone
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
