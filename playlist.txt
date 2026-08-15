@@ -3,10 +3,6 @@
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
 https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/1/720p.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
-#EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) ?Tierand=1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://linear-798.frequency.stream/mt/plex/798/hls/master/playlist.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Afl
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -34,7 +30,7 @@ https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_1.m3u8|User-Agen
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Bola Sepak
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786780270&token=-y_NKokxrQN3l4dn4_yWpd-q4qyVzoyFKVKKxNaDxSg|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786783832&token=dm-PKJzAxPBjONQ24y7WKDlJQfXhSt9XMuYizT9GR4U|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Drama Sangat
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -110,7 +106,7 @@ https://live.mana2.my/SukeTv/index.m3u8?auth_key=1774011116-a5cb46f1c8c442098b7b
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Tv3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786780650&token=v3RGxhhg0k-S9HpVJ6kTSGOy0lkVAqm_DuaMbphPwxM|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1786784399&token=ld_ibfO_QGiLqxi9IuwQ24Gaiupm0h1KX08XgJIITYA|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 group-title="Malaysia TV Net", (🇲🇾) Unxplained Zone
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
