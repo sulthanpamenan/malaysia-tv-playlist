@@ -2,4 +2,4 @@
 #EXTINF:-1 group-title="Malaysia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/TV3_logo_%28Malaysia%29.svg", (🇲🇾) TV3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/Pdn8o8htKSthyska5KM8zk.m3u8?expires=1786772912&token=yLpJT06NNvhWhlbaBQtVl7eO1jpt_HXxc6_av5uhybo|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/Pdn8o8htKSthyska5KM8zk.m3u8?expires=1786773361&token=c_jrnPt5jD1lSiW1rOJ93-d15dfMOLjUiLdzyRsT57E|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
