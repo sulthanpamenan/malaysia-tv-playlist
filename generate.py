@@ -6,89 +6,83 @@ from playwright.sync_api import sync_playwright
 BASE_URL = "https://malaysia-tv.net/tv3-live/"
 EPG_URL = "https://iptv-org.github.io/epg/guides/my/astro.com.my.epg.xml"
 
-# Database EPG ID Presisi & Logo CDN Publik Berkualitas Tinggi
-EPG_LOGO_DB = {
-    # Saluran Malaysia Utama
-    "tv1": {"id": "TV1.my", "name": "TV1", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TV1.my.png", "group": "General"},
-    "tv2": {"id": "TV2.my", "name": "TV2", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TV2.my.png", "group": "General"},
-    "tv3": {"id": "TV3.my", "name": "TV3", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TV3.my.png", "group": "Entertainment"},
-    "tv9": {"id": "TV9.my", "name": "TV9", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TV9.my.png", "group": "Entertainment"},
-    "8tv": {"id": "8TV.my", "name": "8TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/8TV.my.png", "group": "Entertainment"},
-    "8 tv": {"id": "8TV.my", "name": "8TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/8TV.my.png", "group": "Entertainment"},
-    "tv okey": {"id": "TVOkey.my", "name": "TV Okey", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TVOkey.my.png", "group": "Entertainment"},
-    "ntv7": {"id": "NTV7.my", "name": "NTV7", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/NTV7.my.png", "group": "Entertainment"},
-    "drama sangat": {"id": "DramaSangat.my", "name": "Drama Sangat", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/DramaSangat.my.png", "group": "Series"},
-    "astro awani": {"id": "AstroAwani.my", "name": "Astro Awani", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/AstroAwani.my.png", "group": "News"},
-    "awesome tv": {"id": "AwesomeTV.my", "name": "Awesome TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/AwesomeTV.my.png", "group": "Entertainment"},
-    "bernama tv": {"id": "BernamaTV.my", "name": "Bernama TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/BernamaTV.my.png", "group": "News"},
-    "sinar tv": {"id": "SinarTV.my", "name": "Sinar TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/SinarTV.my.png", "group": "News"},
-    "sukan rtm": {"id": "SukanRTM.my", "name": "Sukan RTM", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/SukanRTM.my.png", "group": "Sports"},
-    "berita rtm": {"id": "BeritaRTM.my", "name": "Berita RTM", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/BeritaRTM.my.png", "group": "News"},
-    "ikim": {"id": "IKIMTV.my", "name": "IKIM TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/IKIMTV.my.png", "group": "Religious"},
-    "suke": {"id": "SukeTV.my", "name": "Suke TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/SukeTV.my.png", "group": "Shopping"},
-    "selangor": {"id": "SelangorTV.my", "name": "Selangor TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/SelangorTV.my.png", "group": "Local"},
-
-    # Saluran Internasional Publik
-    "al jazeera": {"id": "AlJazeeraEnglish.qa", "name": "Al Jazeera English", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/AlJazeeraEnglish.qa.png", "group": "News"},
-    "bbc earth": {"id": "BBCEarth.uk", "name": "BBC Earth", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/BBCEarth.uk.png", "group": "Documentary"},
-    "bbc news": {"id": "BBCNews.uk", "name": "BBC News", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/BBCNews.uk.png", "group": "News"},
-    "being sports 1": {"id": "beINSports1.qa", "name": "beIN Sports 1", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/beINSports1.qa.png", "group": "Sports"},
-    "mastiii tv": {"id": "Mastiii.in", "name": "Mastiii TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/Mastiii.in.png", "group": "Music"},
-    "miramax movie": {"id": "MiramaxMovieChannel.us", "name": "Miramax Movie Channel", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/MiramaxMovieChannel.us.png", "group": "Movies"},
-    "pitaara movie": {"id": "PitaaraTV.in", "name": "Pitaara TV", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/PitaaraTV.in.png", "group": "Movies"},
-    "scripps news": {"id": "ScrippsNews.us", "name": "Scripps News", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/ScrippsNews.us.png", "group": "News"},
-    "filmrise movies": {"id": "FilmRise.us", "name": "FilmRise Movies", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/FilmRise.us.png", "group": "Entertainment"},
-    "livenow from fox news": {"id": "LiveNOWfromFOX.us", "name": "LiveNOW from FOX", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/LiveNOWfromFOX.us.png", "group": "News"},
-    "unxplained zone": {"id": "TheUnXplainedZone.us", "name": "The UnXplained Zone", "logo": "https://raw.githubusercontent.com/iptv-org/iptv/master/logos/TheUnXplainedZone.us.png", "group": "Documentary"}
+# Pemetaan ID EPG Resmi Internasional
+EPG_ID_MAP = {
+    "tv1": "TV1.my",
+    "tv2": "TV2.my",
+    "tv3": "TV3.my",
+    "tv9": "TV9.my",
+    "8tv": "8TV.my",
+    "8 tv": "8TV.my",
+    "tv okey": "TVOkey.my",
+    "ntv7": "NTV7.my",
+    "drama sangat": "DramaSangat.my",
+    "astro awani": "AstroAwani.my",
+    "awesome tv": "AwesomeTV.my",
+    "bernama tv": "BernamaTV.my",
+    "sinar tv": "SinarTV.my",
+    "sukan rtm": "SukanRTM.my",
+    "berita rtm": "BeritaRTM.my",
+    "ikim tv": "IKIMTV.my",
+    "suke tv": "SukeTV.my",
+    "selangor tv": "SelangorTV.my",
+    "al jazeera": "AlJazeeraEnglish.qa",
+    "al jazeera english": "AlJazeeraEnglish.qa",
+    "bbc earth": "BBCEarth.uk",
+    "bbc news": "BBCNews.uk",
+    "bein sports 1": "beINSports1.qa",
+    "mastiii tv": "Mastiii.in",
+    "miramax movie channel": "MiramaxMovieChannel.us",
+    "pitaara tv": "PitaaraTV.in",
+    "scripps news": "ScrippsNews.us",
+    "filmrise movies": "FilmRise.us",
+    "livenow from fox": "LiveNOWfromFOX.us",
+    "the unxplained zone": "TheUnXplainedZone.us"
 }
 
 # 15 Kategori Resmi Baku
 CATEGORY_KEYWORD_MAP = {
     "News": ["news", "berita", "warta", "informasi", "politics", "politik"],
-    "Movies": ["movie", "cinema", "film", "wayang", "box office"],
+    "Movies": ["movie", "cinema", "film", "wayang", "box office", "sinema", "dunia sinema"],
     "Series": ["series", "drama", "sinetron", "serial"],
-    "Kids": ["kids", "kartun", "cartoon", "children", "kanak", "anak", "ceria"],
-    "Sports": ["sport", "sukan", "bola", "football", "racing", "stadium", "espn", "afl", "mlb", "raket"],
+    "Kids": ["kids", "kartun", "cartoon", "children", "kanak", "anak", "ceria", "didik"],
+    "Sports": ["sport", "sukan", "bola", "football", "racing", "stadium", "espn", "afl", "mlb", "raket", "tennis", "cricket", "golf", "wwe", "eurosport"],
     "Music": ["music", "musik", "lagu", "hits", "radio", "mastiii"],
     "Documentary": ["documentary", "dokumentari", "history", "sejarah", "nat geo", "discovery", "earth", "unxplained"],
-    "Religious": ["religion", "religious", "islam", "agama", "rohani", "dakwah", "ikim"],
+    "Religious": ["religion", "religious", "islam", "agama", "rohani", "dakwah", "ikim", "salam"],
     "Lifestyle": ["lifestyle", "gaya hidup", "fashion", "food", "masak"],
-    "Shopping": ["shopping", "shop", "belanja", "suke"],
+    "Shopping": ["shopping", "shop", "belanja", "suke", "cj wow"],
     "Travel": ["travel", "pelancongan", "wisata", "explore"],
-    "Knowledge": ["knowledge", "education", "pendidikan", "sains"],
-    "Local": ["local", "lokal", "daerah", "negeri", "selangor", "perak", "sabah", "sarawak"],
-    "Entertainment": ["entertainment", "hiburan", "variety", "show"]
+    "Knowledge": ["knowledge", "education", "pendidikan", "sains", "didik"],
+    "Local": ["local", "lokal", "daerah", "negeri", "selangor", "perak", "sabah", "sarawak", "rtm"],
+    "Entertainment": ["entertainment", "hiburan", "variety", "show", "warna", "ria"]
 }
 
-def clean_slug(slug):
-    name = slug.rstrip("/").split("/")[-1]
-    name = name.replace("-live", "").replace("-tv", " TV").replace("-", " ")
-    return name.lower().strip()
+def clean_channel_name(raw_text, slug):
+    if raw_text and len(raw_text) > 1 and not raw_text.startswith("?"):
+        name = raw_text.strip()
+    else:
+        name = slug.rstrip("/").split("/")[-1].replace("-live", "").replace("-tv", " TV").replace("-", " ").title()
+    return name
 
-def get_smart_metadata(raw_slug_name, web_logo=""):
-    clean_key = clean_slug(raw_slug_name)
-
-    # 1. Matching dengan database EPG presisi
-    for key, data in EPG_LOGO_DB.items():
-        if key == clean_key or key in clean_key or clean_key in key:
-            return data
-
-    # 2. Fallback Kategori Otomatis jika tidak terdaftar di EPG_LOGO_DB
-    final_group = "General"
+def get_category_and_epg(name):
+    clean_key = name.lower().strip()
+    
+    # Matching EPG ID
+    epg_id = f"{re.sub(r'[^a-zA-Z0-9]', '', name)}.my"
+    for k, v in EPG_ID_MAP.items():
+        if k == clean_key or k in clean_key:
+            epg_id = v
+            break
+            
+    # Matching Kategori
+    group = "General"
     for cat, keywords in CATEGORY_KEYWORD_MAP.items():
         if any(kw in clean_key for kw in keywords):
-            final_group = cat
+            group = cat
             break
 
-    formatted_name = raw_slug_name.replace("-live", "").replace("-", " ").title()
-    formatted_id = f"{re.sub(r'[^a-zA-Z0-9]', '', formatted_name)}.my"
-
-    return {
-        "id": formatted_id,
-        "name": formatted_name,
-        "logo": web_logo,
-        "group": final_group
-    }
+    return group, epg_id
 
 def run_scraper():
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
@@ -96,6 +90,7 @@ def run_scraper():
     header_pipe = f"|User-Agent={ua}&Referer={referer}"
 
     valid_channels = []
+    seen_stream_urls = set()
 
     with sync_playwright() as p:
         browser = p.chromium.launch(
@@ -105,46 +100,78 @@ def run_scraper():
         context = browser.new_context(user_agent=ua)
         page = context.new_page()
 
-        print("[*] Membuka halaman indeks...")
-        found_urls = set()
-
+        print("[*] Tahap 1: Mengambil daftar channel & LOGO dari grid web...")
+        channels_to_scrape = []
+        
         try:
             page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
             page.wait_for_timeout(4000)
 
-            for _ in range(12):
+            for _ in range(15):
                 page.mouse.wheel(0, 1200)
-                page.wait_for_timeout(600)
+                page.wait_for_timeout(500)
 
-            all_links = page.locator("a").all()
-            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js", "#", "facebook.com", "twitter.com"]
+            grid_items = page.locator("a").all()
+            visited_urls = set()
 
-            for link in all_links:
-                href = link.get_attribute("href")
-                if href and "malaysia-tv.net" in href:
-                    clean_url = href.split("#")[0].rstrip("/") + "/"
-                    # Abaikan halaman kategori non-channel seperti bola-sepak
-                    if not any(kw in clean_url for kw in ignore_keywords) and clean_url != "https://malaysia-tv.net/":
-                        if "bola-sepak" not in clean_url:  # Filter halaman kategori sports ganda
-                            found_urls.add(clean_url)
+            for item in grid_items:
+                try:
+                    href = item.get_attribute("href")
+                    if not href or "malaysia-tv.net" not in href:
+                        continue
+                    
+                    # 1. PERBAIKAN: Hapus URL query parameter (seperti ?Tierand=1, ?T=1)
+                    clean_url = href.split("?")[0].split("#")[0].rstrip("/") + "/"
+                    
+                    if clean_url in visited_urls or clean_url == "https://malaysia-tv.net/":
+                        continue
 
-            found_urls.add(BASE_URL)
-            print(f"[✓] Berhasil mengindeks {len(found_urls)} URL saluran!")
+                    # Filter tautan kategori non-channel
+                    if "category" in clean_url or "tag" in clean_url or "contact" in clean_url or "privacy" in clean_url:
+                        continue
+
+                    img_elem = item.locator("img").first
+                    logo_url = ""
+                    if img_elem.count() > 0:
+                        src = img_elem.get_attribute("src") or img_elem.get_attribute("data-src")
+                        if src and "http" in src:
+                            logo_url = src
+
+                    raw_text = item.inner_text().strip()
+                    ch_name = clean_channel_name(raw_text, clean_url)
+
+                    # Pastikan nama saluran tidak diawali tanda tanya
+                    if ch_name.startswith("?"):
+                        continue
+
+                    visited_urls.add(clean_url)
+                    channels_to_scrape.append({
+                        "url": clean_url,
+                        "name": ch_name,
+                        "logo": logo_url
+                    })
+                except Exception:
+                    pass
+
+            print(f"[✓] Berhasil mengumpulkan {len(channels_to_scrape)} saluran bersih tanpa query garbage!")
 
         except Exception as e:
-            print(f"[!] Error saat membaca grid halaman: {e}")
+            print(f"[!] Error saat membaca grid halaman utama: {e}")
             browser.close()
             return []
 
         page.close()
 
-        print("\n[*] Mengekstrak Stream, Matching EPG ID, & Logo CDN...")
-        for ch_url in sorted(found_urls):
-            raw_slug = ch_url.rstrip("/").split("/")[-1]
+        print("\n[*] Tahap 2: Intersepsi URL Stream M3U8 & Deduplikasi...")
+        for item in channels_to_scrape:
+            ch_url = item["url"]
+            ch_name = item["name"]
+            web_logo = item["logo"]
+            
             ch_page = context.new_page()
+            print(f"[*] Scraping stream: {ch_name}...")
 
             stream_url = None
-            extracted_logo = ""
 
             def handle_request(request):
                 nonlocal stream_url
@@ -156,15 +183,8 @@ def run_scraper():
             ch_page.on("request", handle_request)
 
             try:
-                ch_page.goto(ch_url, timeout=40000, wait_until="domcontentloaded")
-                ch_page.wait_for_timeout(3000)
-
-                try:
-                    og_image = ch_page.locator('meta[property="og:image"]').get_attribute("content")
-                    if og_image and "http" in og_image:
-                        extracted_logo = og_image
-                except Exception:
-                    pass
+                ch_page.goto(ch_url, timeout=35000, wait_until="domcontentloaded")
+                ch_page.wait_for_timeout(2500)
 
                 try:
                     for frame in ch_page.frames:
@@ -174,25 +194,32 @@ def run_scraper():
                 except Exception:
                     pass
 
-                for _ in range(10):
+                for _ in range(8):
                     if stream_url:
                         break
                     ch_page.wait_for_timeout(1000)
 
             except Exception as e:
-                print(f"[!] Error/Timeout saat memuat {raw_slug}: {e}")
+                print(f"[!] Error/Timeout pada {ch_name}: {e}")
 
             if stream_url:
-                meta = get_smart_metadata(raw_slug, web_logo=extracted_logo)
-                print(f"[✓] [{meta['group']}] {meta['name']} -> EPG ID: {meta['id']}")
+                # 2. PERBAIKAN: Deduplikasi stream URL (mencegah channel ganda/re-stream)
+                if stream_url in seen_stream_urls:
+                    print(f"[x] Skip Duplikat Stream: {ch_name}")
+                else:
+                    seen_stream_urls.add(stream_url)
+                    group, epg_id = get_category_and_epg(ch_name)
+                    print(f"[✓] Berhasil [{group}]: {ch_name} | Logo: {'Ada' if web_logo else 'Kosong'} | EPG: {epg_id}")
 
-                valid_channels.append({
-                    "id": meta["id"],
-                    "name": meta["name"],
-                    "logo": meta["logo"],
-                    "group": meta["group"],
-                    "url": f"{stream_url}{header_pipe}"
-                })
+                    valid_channels.append({
+                        "id": epg_id,
+                        "name": ch_name,
+                        "logo": web_logo,
+                        "group": group,
+                        "url": f"{stream_url}{header_pipe}"
+                    })
+            else:
+                print(f"[x] Skip (Stream tidak ditemukan): {ch_name}")
 
             ch_page.close()
 
@@ -225,7 +252,7 @@ def main():
         with open(filename, "w", encoding="utf-8", newline="\n") as f:
             f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran dengan EPG & Logo presisi!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran tanpa duplikat & query sampah!")
 
 if __name__ == "__main__":
     main()
