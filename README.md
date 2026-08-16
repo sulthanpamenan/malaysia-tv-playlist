@@ -53,12 +53,6 @@ Channels in this playlist are categorized into official groups as follows:
 
 ---
 
-## ⚠️ Disclaimer
-
-This repository does not store, host, or broadcast any media content directly. All stream links are automatically extracted from publicly accessible domains. This project is created purely for educational purposes and personal automation.
-
----
-
 ## ☕ Support the Developer
 
 If the **pluto-playlist** project is helpful to you, consider supporting the developer to keep this project alive and maintained!
@@ -91,3 +85,10 @@ If the **pluto-playlist** project is helpful to you, consider supporting the dev
 </a>
 
 </div>
+
+---
+
+## ⚠️ Disclaimer
+
+This repository does not store, host, or broadcast any media content directly. All stream links are automatically extracted from publicly accessible domains. This project is created purely for educational purposes and personal automation.
+
