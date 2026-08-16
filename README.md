@@ -55,7 +55,7 @@ Channels in this playlist are categorized into official groups as follows:
 
 ## ☕ Support the Developer
 
-If the **pluto-playlist** project is helpful to you, consider supporting the developer to keep this project alive and maintained!
+If the **malaysia-tv-playlist** project is helpful to you, consider supporting the developer to keep this project alive and maintained!
 
 <div align="center">
 
