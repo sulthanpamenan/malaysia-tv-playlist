@@ -6,48 +6,30 @@ from playwright.async_api import async_playwright
 
 BASE_URL = "https://malaysia-tv.net/tv3-live/"
 EPG_URL = "https://iptv-org.github.io/epg/guides/my/astro.com.my.epg.xml"
-CONCURRENCY_LIMIT = 4
+CONCURRENCY_LIMIT = 4  # Menjalankan 4 halaman sekaligus secara paralel
 
-# Pemetaan ID EPG Resmi Internasional (Termasuk Shemaroo & Channel Tematik)
 EPG_ID_MAP = {
-    # Malaysia Local
     "tv1": "TV1.my", "tv2": "TV2.my", "tv3": "TV3.my", "tv9": "TV9.my",
     "8tv": "8TV.my", "8 tv": "8TV.my", "tv okey": "TVOkey.my", "ntv7": "NTV7.my",
     "drama sangat": "DramaSangat.my", "astro awani": "AstroAwani.my",
     "awesome tv": "AwesomeTV.my", "bernama tv": "BernamaTV.my",
     "sinar tv": "SinarTV.my", "sukan rtm": "SukanRTM.my", "berita rtm": "BeritaRTM.my",
     "ikim tv": "IKIMTV.my", "suke tv": "SukeTV.my", "selangor tv": "SelangorTV.my",
-    
-    # Shemaroo & International
-    "shemaroo classic": "ShemarooClassic.in",
-    "shemaroo tv classic": "ShemarooClassic.in",
-    "shemaroo bollywood": "ShemarooBollywood.in",
-    "shemaroo tv bollywood": "ShemarooBollywood.in",
-    "shemaroo songs": "ShemarooSongs.in",
-    "shemaroo umang": "ShemarooUmang.in",
-    "shemaroo dramas": "ShemarooUmang.in",
-    "bollywood prime": "BollywoodPrime.in",
-    "bollywood masala": "BollywoodMasala.in",
-    "pitaara tv": "PitaaraTV.in",
-    "pitaara movies": "PitaaraTV.in",
-    "mastiii tv": "Mastiii.in",
-    "mastiii": "Mastiii.in",
-    
-    # News & Movies International
     "al jazeera": "AlJazeeraEnglish.qa", "al jazeera english": "AlJazeeraEnglish.qa",
     "bbc earth": "BBCEarth.uk", "bbc news": "BBCNews.uk", "bein sports 1": "beINSports1.qa",
-    "miramax movie channel": "MiramaxMovieChannel.us", "miramax movie": "MiramaxMovieChannel.us",
-    "scripps news": "ScrippsNews.us", "filmrise movies": "FilmRise.us", "filmrise": "FilmRise.us",
-    "livenow from fox": "LiveNOWfromFOX.us", "the unxplained zone": "TheUnXplainedZone.us"
+    "mastiii tv": "Mastiii.in", "miramax movie channel": "MiramaxMovieChannel.us",
+    "pitaara tv": "PitaaraTV.in", "scripps news": "ScrippsNews.us",
+    "filmrise movies": "FilmRise.us", "livenow from fox": "LiveNOWfromFOX.us",
+    "the unxplained zone": "TheUnXplainedZone.us"
 }
 
 CATEGORY_KEYWORD_MAP = {
     "News": ["news", "berita", "warta", "informasi", "politics", "politik"],
-    "Movies": ["movie", "cinema", "film", "wayang", "box office", "sinema", "dunia sinema", "shemaroo", "bollywood", "pitaara", "miramax", "filmrise"],
-    "Series": ["series", "drama", "sinetron", "serial", "umang"],
+    "Movies": ["movie", "cinema", "film", "wayang", "box office", "sinema", "dunia sinema"],
+    "Series": ["series", "drama", "sinetron", "serial"],
     "Kids": ["kids", "kartun", "cartoon", "children", "kanak", "anak", "ceria", "didik"],
     "Sports": ["sport", "sukan", "bola", "football", "racing", "stadium", "espn", "afl", "mlb", "raket", "tennis", "cricket", "golf", "wwe", "eurosport"],
-    "Music": ["music", "musik", "lagu", "hits", "radio", "mastiii", "songs"],
+    "Music": ["music", "musik", "lagu", "hits", "radio", "mastiii"],
     "Documentary": ["documentary", "dokumentari", "history", "sejarah", "nat geo", "discovery", "earth", "unxplained"],
     "Religious": ["religion", "religious", "islam", "agama", "rohani", "dakwah", "ikim", "salam"],
     "Lifestyle": ["lifestyle", "gaya hidup", "fashion", "food", "masak"],
@@ -67,7 +49,7 @@ def get_category_and_epg(name):
     clean_key = name.lower().strip()
     epg_id = f"{re.sub(r'[^a-zA-Z0-9]', '', name)}.my"
     for k, v in EPG_ID_MAP.items():
-        if k == clean_key or k in clean_key or clean_key in k:
+        if k == clean_key or k in clean_key:
             epg_id = v
             break
             
@@ -87,41 +69,39 @@ async def scrape_single_channel(context, item, semaphore, seen_stream_urls, head
         
         ch_page = await context.new_page()
         
-        # Hanya blokir font & media besar yang tidak perlu (Gambar tetap diizinkan untuk JS player Shemaroo)
-        await ch_page.route("**/*.{woff,woff2,ttf,otf,mp4,webm}", lambda route: route.abort())
+        # Blokir elemen berat agar load halaman super cepat
+        await ch_page.route("**/*.{png,jpg,jpeg,gif,svg,css,woff,woff2}", lambda route: route.abort())
 
         stream_url = None
 
         def handle_request(request):
             nonlocal stream_url
             req_url = request.url
-            # Dukungan intercept `.m3u8` yang lebih luas (termasuk CDN Shemaroo & OTT Player)
-            if ".m3u8" in req_url:
-                if any(cdn in req_url for cdn in ["b-cdn.net", "streamer", "playlist", "live", "hls", "shemaroo", "akamaized", "cloudfront", "fastly"]):
-                    if not stream_url:
-                        stream_url = req_url
+            if ".m3u8" in req_url and ("b-cdn.net" in req_url or "streamer" in req_url or "playlist" in req_url or "live" in req_url or "hls" in req_url):
+                if not stream_url:
+                    stream_url = req_url
 
         ch_page.on("request", handle_request)
 
         try:
-            await ch_page.goto(ch_url, timeout=20000, wait_until="domcontentloaded")
-            await ch_page.wait_for_timeout(2000)
+            await ch_page.goto(ch_url, timeout=15000, wait_until="domcontentloaded")
+            await ch_page.wait_for_timeout(1500)
 
-            # Klik tombol play otomatis di semua frame (termasuk iframe Shemaroo)
+            # Klik tombol play otomatis di frame
             for frame in ch_page.frames:
                 try:
-                    play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster, iframe, div[class*='player']")
+                    play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster, iframe")
                     if await play_btn.count() > 0:
-                        await play_btn.first.click(timeout=1000)
+                        await play_btn.first.click(timeout=800)
                 except Exception:
                     pass
 
-            for _ in range(8):
+            for _ in range(6):
                 if stream_url:
                     break
-                await ch_page.wait_for_timeout(1000)
+                await ch_page.wait_for_timeout(500)
 
-        except Exception:
+        except Exception as e:
             print(f"[!] Timeout pada {ch_name}")
 
         await ch_page.close()
@@ -152,17 +132,16 @@ async def run_scraper():
         context = await browser.new_context(user_agent=ua)
         page = await context.new_page()
 
-        print("[*] Tahap 1: Membaca Grid Utama & Logo Saluran...")
+        print("[*] Tahap 1: Membaca Grid Utama & Logo...")
         channels_to_scrape = []
         
         try:
-            await page.goto(BASE_URL, timeout=35000, wait_until="domcontentloaded")
-            await page.wait_for_timeout(3000)
+            await page.goto(BASE_URL, timeout=30000, wait_until="domcontentloaded")
+            await page.wait_for_timeout(2000)
 
-            # Scroll bertahap untuk memastikan seluruh saluran (Shemaroo, Movies, Sports) di-load
-            for _ in range(12):
+            for _ in range(10):
                 await page.mouse.wheel(0, 1500)
-                await page.wait_for_timeout(400)
+                await page.wait_for_timeout(300)
 
             grid_items = await page.locator("a").all()
             visited_urls = set()
@@ -203,7 +182,7 @@ async def run_scraper():
                 except Exception:
                     pass
 
-            print(f"[✓] Terkumpul {len(channels_to_scrape)} saluran dari Grid Web!")
+            print(f"[✓] Terkumpul {len(channels_to_scrape)} saluran dari Grid!")
 
         except Exception as e:
             print(f"[!] Error saat membuka halaman utama: {e}")
@@ -253,7 +232,7 @@ def main():
         with open(filename, "w", encoding="utf-8", newline="\n") as f:
             f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Selesai! Berhasil memperbarui {len(valid_channels)} saluran (termasuk Shemaroo & tematik)!")
+    print(f"\n[SUCCESS] Selesai! Berhasil memperbarui {len(valid_channels)} saluran dalam waktu singkat!")
 
 if __name__ == "__main__":
     main()
