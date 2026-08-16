@@ -4,41 +4,12 @@ import re
 from playwright.sync_api import sync_playwright
 
 BASE_URL = "https://malaysia-tv.net/tv3-live/"
+EPG_URL = "https://iptv-org.github.io/epg/guides/my/astro.com.my.epg.xml"
 
-# Database Metadata Resmi & Pemetaan Kategori
-CHANNEL_DB = {
-    "al jazeera": {"id": "AlJazeera.qa", "name": "Al Jazeera", "logo": "", "group": "News"},
-    "shemaroo classic": {"id": "ShemarooClassic.in", "name": "Shemaroo Classic", "logo": "", "group": "Movies"},
-    "bollywood prime": {"id": "BollywoodPrime.in", "name": "Bollywood Prime", "logo": "", "group": "Movies"},
-    "bollywood masala": {"id": "BollywoodMasala.in", "name": "Bollywood Masala", "logo": "", "group": "Movies"},
-    "shemaroo songs": {"id": "ShemarooSongs.in", "name": "Shemaroo Songs", "logo": "", "group": "Music"},
-    "pitaara tv": {"id": "PitaaraTV.in", "name": "Pitaara TV", "logo": "", "group": "Movies"},
-    "shemaroo umang": {"id": "ShemarooUmang.in", "name": "Shemaroo Umang", "logo": "", "group": "Series"},
-    "mastiii": {"id": "Mastiii.in", "name": "Mastiii", "logo": "", "group": "Music"},
-    "shemaroo bollywood": {"id": "ShemarooBollywood.in", "name": "Shemaroo Bollywood", "logo": "", "group": "Movies"},
-    "miramax movie channel": {"id": "MiramaxMovieChannel.us", "name": "Miramax Movie Channel", "logo": "", "group": "Movies"},
-    "filmrise": {"id": "FilmRise.us", "name": "FilmRise", "logo": "", "group": "Entertainment"},
-    "tv one": {"id": "TVOne.us", "name": "TV One", "logo": "", "group": "General"},
-    "bbc earth": {"id": "BBCEarth.uk", "name": "BBC Earth", "logo": "", "group": "Documentary"},
-    "gousa tv": {"id": "GoUSATV.us", "name": "GoUSA TV", "logo": "", "group": "Lifestyle"},
-    "warner tv": {"id": "WarnerTV.us", "name": "Warner TV", "logo": "", "group": "Entertainment"}
-}
-
-def get_channel_metadata(slug_name):
-    clean_name = slug_name.lower().strip()
-    
-    # Cari pencocokan kunci terdekat di database
-    for key, meta in CHANNEL_DB.items():
-        if key in clean_name or clean_name in key:
-            return meta
-            
-    # Default jika channel baru belum terdaftar di database
-    return {
-        "id": f"{slug_name.replace(' ', '')}.tv",
-        "name": slug_name,
-        "logo": "",
-        "group": "General"
-    }
+def clean_channel_name(slug):
+    name = slug.rstrip("/").split("/")[-1]
+    name = name.replace("-live", "").replace("-tv", " TV").replace("-", " ")
+    return name.title().strip()
 
 def run_scraper():
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
@@ -67,7 +38,11 @@ def run_scraper():
                 page.wait_for_timeout(600)
 
             all_links = page.locator("a").all()
-            ignore_keywords = ["/category/", "/tag/", "/contact", "/privacy", "/terms", ".png", ".jpg", ".jpeg", ".css", ".js", "#", "facebook.com", "twitter.com"]
+            ignore_keywords = [
+                "/category/", "/tag/", "/contact", "/privacy", "/terms", 
+                ".png", ".jpg", ".jpeg", ".css", ".js", "#", 
+                "facebook.com", "twitter.com"
+            ]
 
             for link in all_links:
                 href = link.get_attribute("href")
@@ -77,7 +52,7 @@ def run_scraper():
                         found_urls.add(clean_url)
 
             found_urls.add(BASE_URL)
-            print(f"[✓] Berhasil mengindeks {len(found_urls)} URL halaman channel!")
+            print(f"[✓] Berhasil mengindeks {len(found_urls)} URL saluran dari halaman web!")
 
         except Exception as e:
             print(f"[!] Error saat membaca grid halaman: {e}")
@@ -86,13 +61,15 @@ def run_scraper():
 
         page.close()
 
-        print("\n[*] Tahap 2: Mengekstrak stream M3U8 & memasangkan metadata...")
+        print("\n[*] Tahap 2: Mengekstrak Stream, Logo, & Kategori secara otomatis...")
         for ch_url in sorted(found_urls):
-            raw_slug = ch_url.rstrip("/").split("/")[-1].replace("-live", "").replace("-", " ").title()
+            raw_name = clean_channel_name(ch_url)
             ch_page = context.new_page()
-            print(f"[*] Scraping channel: {raw_slug}...")
+            print(f"[*] Scraping channel: {raw_name}...")
 
             stream_url = None
+            extracted_logo = ""
+            extracted_group = "Malaysia"
 
             def handle_request(request):
                 nonlocal stream_url
@@ -107,6 +84,31 @@ def run_scraper():
                 ch_page.goto(ch_url, timeout=40000, wait_until="domcontentloaded")
                 ch_page.wait_for_timeout(3000)
 
+                # 1. Ekstraksi Logo Otomatis dari Meta Tag / Elemen Gambar Halaman Web
+                try:
+                    og_image = ch_page.locator('meta[property="og:image"]').get_attribute("content")
+                    if og_image and "http" in og_image:
+                        extracted_logo = og_image
+                    else:
+                        img_element = ch_page.locator("article img, .entry-content img, #player img").first
+                        if img_element.count() > 0:
+                            src = img_element.get_attribute("src")
+                            if src and "http" in src:
+                                extracted_logo = src
+                except Exception:
+                    pass
+
+                # 2. Ekstraksi Kategori Otomatis dari Category Tag / Breadcrumb Halaman Web
+                try:
+                    cat_element = ch_page.locator('.cat-links a, .entry-category a, a[rel="category tag"]').first
+                    if cat_element.count() > 0:
+                        cat_text = cat_element.inner_text().strip().title()
+                        if cat_text:
+                            extracted_group = cat_text
+                except Exception:
+                    pass
+
+                # 3. Intersepsi Tombol Play / Player Video
                 try:
                     for frame in ch_page.frames:
                         play_btn = frame.locator("video, .play-button, #player, .vjs-big-play-button, .player-poster, iframe")
@@ -121,20 +123,22 @@ def run_scraper():
                     ch_page.wait_for_timeout(1000)
 
             except Exception as e:
-                print(f"[!] Error/Timeout saat memuat {raw_slug}: {e}")
+                print(f"[!] Error/Timeout saat memuat {raw_name}: {e}")
 
             if stream_url:
-                meta = get_channel_metadata(raw_slug)
-                print(f"[✓] Berhasil [{meta['group']}]: {meta['name']}")
+                # Format EPG ID secara otomatis dari nama saluran
+                epg_id = f"{re.sub(r'[^a-zA-Z0-9]', '', raw_name)}.my"
+                print(f"[✓] Berhasil [{extracted_group}]: {raw_name} (EPG ID: {epg_id})")
+                
                 valid_channels.append({
-                    "id": meta["id"],
-                    "name": meta["name"],
-                    "logo": meta["logo"],
-                    "group": meta["group"],
+                    "id": epg_id,
+                    "name": raw_name,
+                    "logo": extracted_logo,
+                    "group": extracted_group,
                     "url": f"{stream_url}{header_pipe}"
                 })
             else:
-                print(f"[x] Skip (Bukan M3U8): {raw_slug}")
+                print(f"[x] Skip (Bukan M3U8): {raw_name}")
 
             ch_page.close()
 
@@ -152,10 +156,11 @@ def main():
     ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     referer = "https://malaysia-tv.net/"
 
-    m3u_lines = ["#EXTM3U\n"]
+    # Menyusun isi M3U dengan header url-tvg
+    m3u_lines = [f'#EXTM3U url-tvg="{EPG_URL}"\n\n']
+    
     for ch in channels:
-        # Menuliskan baris EXTINF dengan atribut lengkap tvg-id, tvg-name, tvg-logo, dan group-title
-        extinf = f'#EXTINF:-1 tvg-id="{ch["id"]}" tvg-name="{ch["name"]}" tvg-logo="{ch["logo"]}" group-title="{ch["group"]}", {ch["name"]}\n'
+        extinf = f'#EXTINF:-1 tvg-id="{ch["id"]}" tvg-name="{ch["name"]}" tvg-logo="{ch["logo"]}" group-title="{ch["group"]}",{ch["name"]}\n'
         m3u_lines.append(extinf)
         m3u_lines.append(f'#EXTVLCOPT:http-user-agent={ua}\n')
         m3u_lines.append(f'#EXTVLCOPT:http-referrer={referer}\n')
@@ -167,7 +172,7 @@ def main():
         with open(filename, "w", encoding="utf-8", newline="\n") as f:
             f.write(m3u_content)
 
-    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran dengan metadata & kategori otomatis!")
+    print(f"\n[SUCCESS] Berhasil memperbarui {len(channels)} saluran secara otomatis dari malaysia-tv.net!")
 
 if __name__ == "__main__":
     main()
