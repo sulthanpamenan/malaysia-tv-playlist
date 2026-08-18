@@ -3,7 +3,7 @@
 #EXTINF:-1 tvg-id="TV3.my" tvg-name="Tv3" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/TV3-Live-Streaming-HD-Now-3.webp" group-title="General",Tv3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787036997&token=qMjgwAXGYOqSF_wiLP1UUkfyuPBRva4_jWDB2HmVDTQ|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787047253&token=UoLOCHLQk1QdrzppVS7hWPHDRJ9oWOxaK_uIKYua3ls|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="FifaPlus.my" tvg-name="Fifa Plus" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/11/FIFA-Plus-Live-Streaming.webp" group-title="General",Fifa Plus
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -47,7 +47,7 @@ https://www.livedoomovies.com:4431/02_sport7_720p/playlist.m3u8|User-Agent=Mozil
 #EXTINF:-1 tvg-id="BolaSepak.my" tvg-name="Bola Sepak" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/Bola-Sepak-Malaysia-TV-Live-Streaming-HD-Free.webp" group-title="Sports",Bola Sepak
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787037042&token=HdEv1V09mAf_erCa26sZHnQ_GzeUy40QaFnvCVhdJF8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787047299&token=PgNXbzwxGoI8bNQuDJmOg_EVtHBsCWRaEwxUbkqePJc|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="BeingSports1.my" tvg-name="Being Sports 1" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/BEin-Sports-Live-Streaming-Malaysia-HD-Channel.webp" group-title="Sports",Being Sports 1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -64,7 +64,7 @@ https://vg-pitaaratvyupp.akamaized.net/ptnr-yupptv/v1/manifest/611d79b11b77e2f57
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
 https://d1taaads3ztvmu.cloudfront.net/120723/mastii/playlist.m3u8?hdnts=st=1769519279~exp=1769522879~acl=!*/120723/mastii/*!yuppTVCom_5_-1_2e0284d689164e1d_PK_116.90.100.223/payload/yuppTVCom_5_-1_2e0284d689164e1d_PK_116.90.100.223/*~hmac=6d70022f5e55f8eafacb3e62fbb9f2646d40e5cc6141f01c38bdb465fc3ca280&ads.app_bundle=&ads.app_store_url=&ads.content_livestream=1&ads.language=HIN&ads.content_genre=MUS&ads.channel=5229&ads.channel_name=Mastiii&ads.network_name=yupptv&ads.user=0|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
-#EXTINF:-1 tvg-id="MiramaxMovie.my" tvg-name="Miramax Movie" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/MIRAMAX-MOVIES-Live-Streaming-HD-Free.webp" group-title="Movies",Miramax Movie
+#EXTINF:-1 tvg-id="FilmRise.us" tvg-name="Filmrise Movies" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/FILMRISE-Live-Streaming-HD-Free.webp" group-title="Movies",Filmrise Movies
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
 https://linear-798.frequency.stream/mt/plex/798/hls/master/playlist.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
