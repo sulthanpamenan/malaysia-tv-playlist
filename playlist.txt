@@ -3,7 +3,7 @@
 #EXTINF:-1 tvg-id="TV3.my" tvg-name="Tv3" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/TV3-Live-Streaming-HD-Now-3.webp" group-title="General",Tv3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787112433&token=6ixexCeSKFsI_gyj-_gVrFcuyRkOKliUln1h3n9J0nY|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787113137&token=F5qUX7D1T-bX4zDps41JYciWEP3drGeYxAdf_FyL9kM|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="FifaPlus.my" tvg-name="Fifa Plus" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/11/FIFA-Plus-Live-Streaming.webp" group-title="General",Fifa Plus
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
@@ -47,7 +47,7 @@ https://www.livedoomovies.com:4431/02_sport7_720p/playlist.m3u8|User-Agent=Mozil
 #EXTINF:-1 tvg-id="BolaSepak.my" tvg-name="Bola Sepak" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/Bola-Sepak-Malaysia-TV-Live-Streaming-HD-Free.webp" group-title="Sports",Bola Sepak
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787112478&token=D86d1MSpsYinDv1V023DHBogLKJ2PNopl0BUOV-SqYE|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/UAaGaZC1LCirxDZcBXHeEu.m3u8?expires=1787113183&token=RVE4ejY_LSEs0a9DXRiPtlRoDwTxspzuCbFSK4vLz_o|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="BeingSports1.my" tvg-name="Being Sports 1" tvg-logo="https://malaysia-tv.net/wp-content/uploads/2025/03/BEin-Sports-Live-Streaming-Malaysia-HD-Channel.webp" group-title="Sports",Being Sports 1
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://malaysia-tv.net/
