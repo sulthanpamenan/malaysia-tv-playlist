@@ -26,7 +26,7 @@ def get_stream_link(channel_name):
     }
     
     encrypted_v = encrypt_payload(payload)
-    worker_url = f"https://worker-anda.workers.dev/stream?v={encrypted_v}"
+    worker_url = f"https://tvmalaysia-proxy.sulthan-pamenan.workers.dev/?channel={channel_name.lower()}&format=json"
     
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
