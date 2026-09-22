@@ -23,7 +23,6 @@ def generate_m3u():
     for ch in channels:
         print(f"Mengambil link untuk {ch['name']} via Worker...")
         try:
-            # Panggil Cloudflare Worker untuk mengambil link m3u8 terbaru
             res = requests.get(f"{WORKER_URL}?channel={ch['slug']}&format=json", timeout=15)
             if res.status_code == 200:
                 data = res.json()
