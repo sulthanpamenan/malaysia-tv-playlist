@@ -37,8 +37,9 @@ def get_stream_link(channel_name):
         response = requests.get(worker_url, headers=headers, timeout=10)
         if response.status_code == 200:
             data = response.json()
-            print(f"Berhasil mendapatkan link untuk {channel_name}: {data.get('url')}")
-            return data.get('url')
+            stream_url = data.get('streamUrl') 
+            print(f"Berhasil mendapatkan link untuk {channel_name}: {stream_url}")
+            return stream_url
         else:
             print(f"Gagal untuk {channel_name}, Status Code: {response.status_code}")
     except Exception as e:
