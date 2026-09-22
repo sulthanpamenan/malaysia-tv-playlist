@@ -12,51 +12,46 @@ def encrypt_payload(payload_dict):
         current_data = urllib.parse.quote(b64_encoded, safe='')
     return current_data
 
-def get_stream_link(channel_name):
-    publisher_id = "default_publisher"
-    payload = {
-        "p": publisher_id,
-        "c": channel_name,
-        "q": "auto",
-        "e": "main",
-        "n": int(time.time() * 1000)
-    }
-    encrypted_v = encrypt_payload(payload)
-    worker_url = f"https://tvmalaysia-proxy.sulthan-pamenan.workers.dev/?channel={channel_name.lower()}&format=json"
-    
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://domain-utama.com/"
-    }
-    
-    try:
-        response = requests.get(worker_url, headers=headers, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            return data.get('streamUrl')
-    except Exception as e:
-        print(f"Error pada channel {channel_name}: {e}")
-    return None
-
-# Daftar channel yang ingin dimasukkan ke playlist
+# Daftar channel yang ingin dikelola
 channels = [
-    {"name": "TV1", "id": "tv1"},
-    {"name": "Astro Awani", "id": "astro-awani"},
-    {"name": "TV3", "id": "tv3"}
+    {"name": "TV1", "id": "tv1", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVFelQwUmpOVTlETURSTmVrbDRUa1JWTVU5RFNqaz0%3D"},
+    {"name": "TV2", "id": "tv2", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYbEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVVMFRXcEpNVTlETURKTmFtY3lUMVJOZDAxcFNqaz0%3D"},
+    {"name": "TV3", "id": "tv3", "v": "WlhsS2QwbHFiMmxrUnpsMVpFYzVkVWxwZDJsWmVVazJTVzVTTWsxNVNYTkpia1ZwVDJsS2RGbFhiSFZKYVhkcFdsTkpOa2xxUlRSTlJFSjZTV2wzYVdKcFNUWkpha1V6VDFSQmQwNVVRWGROYWxFd1RVUlZkRTE2VFRGTmVtY3lUbFJyYVdaUlBUMD0%3D"},
+    {"name": "Astro Awani", "id": "astro-awani", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEJQUkd0NVQxUlZOVTE1TURGUFZFa3lUMVJWZDA1VFNqaz0%3D"}
 ]
 
-# Membuat file playlist.m3u secara otomatis
 m3u_content = "#EXTM3U\n"
 
 for ch in channels:
-    print(f"Mengambil link untuk {ch['name']}...")
-    stream_url = get_stream_link(ch['id'])
-    if stream_url:
-        m3u_content += f"#EXTINF:-1 tvg-id=\"{ch['id']}\" ,{ch['name']}\n"
-        m3u_content += f"{stream_url}\n"
+    print(f"Mengambil link segar untuk {ch['name']}...")
+    bootstrap_url = f"https://tvmalaysia.com.co/wp-json/media-hub/v1/bootstrap?v={ch['v']}"
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": f"https://tvmalaysia.com.co/{ch['id']}/"
+    }
+    
+    try:
+        response = requests.get(bootstrap_url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            raw_text = response.text.strip('"')
+            decoded_data = raw_text
+            for _ in range(3):
+                decoded_data = urllib.parse.unquote(decoded_data)
+                buffer = base64.b64decode(decoded_data.encode('utf-8'))
+                decoded_data = buffer.decode('utf-8')
+            
+            data = json.loads(decoded_data)
+            stream_url = data.get('streamUrl') or data.get('url') or data.get('file')
+            
+            if stream_url:
+                m3u_content += f"#EXTINF:-1 tvg-id=\"{ch['id']}\" group-title=\"Malaysian Channels\",{ch['name']}\n"
+                m3u_content += f"{stream_url}\n"
+    except Exception as e:
+        print(f"Gagal pada {ch['name']}: {e}")
 
-# Simpan ke file playlist.m3u
+# Simpan ke playlist.m3u
 with open("playlist.m3u", "w", encoding="utf-8") as f:
     f.write(m3u_content)
 
-print("\nBerhasil! File 'playlist.m3u' telah dibuat dan siap digunakan di aplikasi IPTV.")
+print("File playlist.m3u berhasil diperbarui!")
