@@ -1,7 +1,9 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="tv1" ,TV1
-https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790062155&token=0-KpKTV5fex1MgclMe7g5BsV9DN1RSopJzmqFvVyKgU
-#EXTINF:-1 tvg-id="astro-awani" ,Astro Awani
-https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790062155&token=0-KpKTV5fex1MgclMe7g5BsV9DN1RSopJzmqFvVyKgU
-#EXTINF:-1 tvg-id="tv3" ,TV3
-https://2bfd741e.b-cdn.net/streamer/6enj7a28wshMvNNzXzLrtmMDgVsnVpJC6cZGZf6g5yJt.m3u8?expires=1790062156&token=MMT0pPnDa7D_ZxWSMn53qtzu1A74gDIjOq83CKC4fJk
+#EXTINF:-1 tvg-id="tv1" group-title="Malaysian Channels",TV1
+https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790069773&token=TOZoEQjUc-4pWUaOLac45L90BvoCVWz4qToIAdskzMA
+#EXTINF:-1 tvg-id="tv2" group-title="Malaysian Channels",TV2
+https://2bfd741e.b-cdn.net/streamer/6gvxGkHHQ1mtt9QWbXcyW9bzkAZEvyq1kXdqNHEv28BL.m3u8?expires=1790069773&token=B7h6Pwa1QzwJrVp5rCI-w1oiGh8zfm0w1gQWUATxprk
+#EXTINF:-1 tvg-id="tv3" group-title="Malaysian Channels",TV3
+https://2bfd741e.b-cdn.net/streamer/6enj7a28wshMvNNzXzLrtmMDgVsnVpJC6cZGZf6g5yJt.m3u8?expires=1790069774&token=ZBZ8U8byaRc8aWgqo-ytNqIcg34NjxpIQ4k-TDh9NhI
+#EXTINF:-1 tvg-id="astro-awani" group-title="Malaysian Channels",Astro Awani
+https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790069775&token=1N669Il1QJmxpkNQM9blJYpqX-cy44cG87V-ZP7o74g
