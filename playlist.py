@@ -1,8 +1,8 @@
 import os
-import re
 import requests
 
-# Daftar channel yang ingin ditarik
+WORKER_URL = "https://tvmalaysia-proxy.sulthan-pamenan.workers.dev/"
+
 channels = [
     {"name": "TV1", "slug": "tv1", "logo": "https://tvmalaysia.com.co/wp-content/uploads/2025/04/TV1-Live-Streaming-TVMalaysia.com_.co_.webp"},
     {"name": "TV2", "slug": "tv2", "logo": "https://tvmalaysia.com.co/wp-content/uploads/2025/04/TV2-Live-Streaming-TVMalaysia.com_.co_.webp"},
@@ -16,45 +16,33 @@ channels = [
     {"name": "Astro Arena", "slug": "astro-arena", "logo": "https://tvmalaysia.com.co/wp-content/uploads/2025/04/Astro-Arena-Live-Streaming-TVMalaysia.com_.co_.webp"},
 ]
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Referer": "https://tvmalaysia.com.co/"
-}
-
-def get_stream_url(slug):
-    try:
-        page_url = f"https://tvmalaysia.com.co/{slug}/"
-        res = requests.get(page_url, headers=headers, timeout=15)
-        if res.status_code != 200:
-            return None
-        
-        # Cari pola link m3u8 yang ada di dalam halaman HTML/script website
-        match = re.search(r'https?://[^\s<>"]+?\.b-cdn\.net[^\s<>"]+?\.m3u8[^\s<>"]*', res.text)
-        if match:
-            return match.group(0)
-    except Exception as e:
-        print(f"Error fetching {slug}: {e}")
-    return None
-
 def generate_m3u():
     m3u_content = "#EXTM3U\n"
+    success_count = 0
     
     for ch in channels:
-        print(f"Mencari link untuk {ch['name']}...")
-        stream_url = get_stream_url(ch['slug'])
-        
-        if stream_url:
-            print(f"Ditemukan: {stream_url}")
-            m3u_content += f"#EXTINF:-1 tvg-id=\"{ch['slug']}\" tvg-logo=\"{ch['logo']}\" group-title=\"Malaysian Channels\",{ch['name']}\n"
-            m3u_content += f"#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/\n"
-            m3u_content += f"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)\n"
-            m3u_content += f"{stream_url}\n"
-        else:
-            print(f"Gagal mendapatkan link untuk {ch['name']}")
+        print(f"Mengambil link untuk {ch['name']} via Worker...")
+        try:
+            # Panggil Cloudflare Worker untuk mengambil link m3u8 terbaru
+            res = requests.get(f"{WORKER_URL}?channel={ch['slug']}&format=json", timeout=15)
+            if res.status_code == 200:
+                data = res.json()
+                stream_url = data.get("streamUrl")
+                if stream_url:
+                    print(f"  -> Berhasil: {stream_url}")
+                    m3u_content += f"#EXTINF:-1 tvg-id=\"{ch['slug']}\" tvg-logo=\"{ch['logo']}\" group-title=\"Malaysian Channels\",{ch['name']}\n"
+                    m3u_content += f"#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/\n"
+                    m3u_content += f"#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)\n"
+                    m3u_content += f"{stream_url}\n"
+                    success_count += 1
+                    continue
+            print(f"  -> Gagal mendapatkan link untuk {ch['name']}")
+        except Exception as e:
+            print(f"  -> Error: {e}")
 
     with open("playlist.m3u", "w", encoding="utf-8") as f:
         f.write(m3u_content)
-    print("File playlist.m3u berhasil diperbarui!")
+    print(f"Selesai! Berhasil memperbarui {success_count} channel ke playlist.m3u")
 
 if __name__ == "__main__":
     generate_m3u()
