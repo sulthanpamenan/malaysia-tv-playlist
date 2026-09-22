@@ -12,14 +12,31 @@ def encrypt_payload(payload_dict):
         current_data = urllib.parse.quote(b64_encoded, safe='')
     return current_data
 
-# Daftar channel yang ingin dikelola
+# Daftar channel yang ingin dikelola beserta token bootstrap-nya
 channels = [
-    {"name": "TV1", "id": "tv1", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVFelQwUmpOVTlETURSTmVrbDRUa1JWTVU5RFNqaz0%3D"},
-    {"name": "TV2", "id": "tv2", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYbEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVVMFRXcEpNVTlETURKTmFtY3lUMVJOZDAxcFNqaz0%3D"},
-    {"name": "TV3", "id": "tv3", "v": "WlhsS2QwbHFiMmxrUnpsMVpFYzVkVWxwZDJsWmVVazJTVzVTTWsxNVNYTkpia1ZwVDJsS2RGbFhiSFZKYVhkcFdsTkpOa2xxUlRSTlJFSjZTV2wzYVdKcFNUWkpha1V6VDFSQmQwNVVRWGROYWxFd1RVUlZkRTE2VFRGTmVtY3lUbFJyYVdaUlBUMD0%3D"},
-    {"name": "Astro Awani", "id": "astro-awani", "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEJQUkd0NVQxUlZOVTE1TURGUFZFa3lUMVJWZDA1VFNqaz0%3D"}
+    {
+        "name": "TV1", 
+        "id": "tv1", 
+        "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVFelQwUmpOVTlETURSTmVrbDRUa1JWTVU5RFNqaz0%3D"
+    },
+    {
+        "name": "TV2", 
+        "id": "tv2", 
+        "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYbEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEZOUkVVMFRXcEpNVTlETURKTmFtY3lUMVJOZDAxcFNqaz0%3D"
+    },
+    {
+        "name": "TV3", 
+        "id": "tv3", 
+        "v": "WlhsS2QwbHFiMmxrUnpsMVpFYzVkVWxwZDJsWmVVazJTVzVTTWsxNVNYTkpia1ZwVDJsS2RGbFhiSFZKYVhkcFdsTkpOa2xxUlRSTlJFSjZTV2wzYVdKcFNUWkpha1V6VDFSQmQwNVVRWGROYWxFd1RVUlZkRTE2VFRGTmVtY3lUbFJyYVdaUlBUMD0%3D"
+    },
+    {
+        "name": "Astro Awani", 
+        "id": "astro-awani", 
+        "v": "WlhsS2QwbHFiMmxpVjBaMVdWUkpkR0pZYTJsTVEwcHFTV3B2YVdSSVdYaEphWGRwWTFOSk5rbHRNV2hoVnpScFRFTktiRWxxYjJsTlZHZDNUVWhOYVV4RFNuVkphbTlwVFZSak5VMUVRVEJQUkd0NVQxUlZOVTE1TURGUFZFa3lUMVJWZDA1VFNqaz0%3D"
+    }
 ]
 
+# Mulai isi file M3U
 m3u_content = "#EXTM3U\n"
 
 for ch in channels:
@@ -45,13 +62,16 @@ for ch in channels:
             stream_url = data.get('streamUrl') or data.get('url') or data.get('file')
             
             if stream_url:
-                m3u_content += f"#EXTINF:-1 tvg-id=\"{ch['id']}\" group-title=\"Malaysian Channels\",{ch['name']}\n"
+                # Menambahkan informasi channel dan opsi header EXTVLCOPT secara otomatis
+                m3u_content += f'#EXTINF:-1 tvg-id="{ch["id"]}" group-title="Malaysian Channels",{ch["name"]}\n'
+                m3u_content += '#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/\n'
+                m3u_content += '#EXTVLCOPT:http-origin=https://tvmalaysia.com.co\n'
                 m3u_content += f"{stream_url}\n"
     except Exception as e:
         print(f"Gagal pada {ch['name']}: {e}")
 
-# Simpan ke playlist.m3u
+# Simpan hasilnya ke file playlist.m3u
 with open("playlist.m3u", "w", encoding="utf-8") as f:
     f.write(m3u_content)
 
-print("File playlist.m3u berhasil diperbarui!")
+print("File playlist.m3u berhasil diperbarui dengan opsi header lengkap!")
