@@ -9,11 +9,37 @@ CHANNELS = [
     {"name": "FIFA+", "slug": "fifa-plus", "group": "Sports", "logo": "https://example.com/fifaplus.png"},
     {"name": "TV9 Malaysia", "slug": "tv9-malaysia", "group": "General", "logo": "https://example.com/tv9.png"},
     {"name": "TV2", "slug": "tv2-live", "group": "General", "logo": "https://example.com/tv2.png"},
-    {"name": "Al Hijrah", "slug": "al-hijrah", "group": "Religious", "logo": "https://example.com/alhijrah.png"},
+    {"name": "Al Hijrah TV", "slug": "al-hijrah", "group": "Religious", "logo": "https://example.com/alhijrah.png"},
     {"name": "Sukan RTM", "slug": "sukan-rtm", "group": "Sports", "logo": "https://example.com/sukanrtm.png"},
     {"name": "Berita RTM", "slug": "berita-waliyah", "group": "News + Opinion", "logo": "https://example.com/beritartm.png"},
-    {"name": "Bernama", "slug": "bernama", "group": "News + Opinion", "logo": "https://example.com/bernama.png"},
-    {"name": "TV Okey", "slug": "okey", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "Bernama TV", "slug": "bernama", "group": "News + Opinion", "logo": "https://example.com/bernama.png"},
+    {"name": "TV Okey", "slug": "okey", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Selangor TV", "slug": "selangor", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "CNA", "slug": "cna", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "PPA KL Cup", "slug": "ppa-kl-cup", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "DW", "slug": "dw", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "Arirang", "slug": "arirang", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "The Indonesia Channel", "slug": "the-indonesia-channel", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "Al Jazeera", "slug": "al-jazeera", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
 ]
 
 def get_stream_url(slug):
