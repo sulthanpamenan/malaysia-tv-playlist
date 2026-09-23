@@ -1,17 +1,5 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="tv1" group-title="Malaysian Channels",TV1
-#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/
-#EXTVLCOPT:http-origin=https://tvmalaysia.com.co
-https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790130382&token=pFFp6FPrLGOuY_UxAYg3fmXZpPmhLEgmh9Rq2x9gQQ8
-#EXTINF:-1 tvg-id="tv2" group-title="Malaysian Channels",TV2
-#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/
-#EXTVLCOPT:http-origin=https://tvmalaysia.com.co
-https://2bfd741e.b-cdn.net/streamer/6gvxGkHHQ1mtt9QWbXcyW9bzkAZEvyq1kXdqNHEv28BL.m3u8?expires=1790130383&token=CbV7AIOGQUqEhlJgGYt-dXBStgdQj0-7syMuFZurrrY
-#EXTINF:-1 tvg-id="tv3" group-title="Malaysian Channels",TV3
-#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/
-#EXTVLCOPT:http-origin=https://tvmalaysia.com.co
-https://2bfd741e.b-cdn.net/streamer/6enj7a28wshMvNNzXzLrtmMDgVsnVpJC6cZGZf6g5yJt.m3u8?expires=1790130383&token=BKiqolFTQN4WbxKRp4Wos9SNJ-bnwVgvhzrXY9QEQ6w
-#EXTINF:-1 tvg-id="astro-awani" group-title="Malaysian Channels",Astro Awani
-#EXTVLCOPT:http-referrer=https://tvmalaysia.com.co/
-#EXTVLCOPT:http-origin=https://tvmalaysia.com.co
-https://2bfd741e.b-cdn.net/streamer/CpfuFTFqcaKT1LnpjWzNcPBp7Z8RXnz8i63NiK3Csu16.m3u8?expires=1790130384&token=WfK2MbncraVMDtMealtQlnt9Ori51No-Rt_tPO9_YsE
+#EXTINF:-1 group-title="Malaysian Channels",sukan rtm
+https://error-link-not-found
+#EXTINF:-1 group-title="Malaysian Channels",TV3
+https://error-link-not-found
