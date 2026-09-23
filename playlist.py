@@ -2,15 +2,15 @@ import time
 from playwright.sync_api import sync_playwright
 
 CHANNELS = [
-    {"name": "Sukan RTM", "slug": "sukan-rtm"},
-    {"name": "TV1", "slug": "rtm-tv1-live"},
-    {"name": "TV2", "slug": "rtm-tv2-live"},
-    {"name": "TV3", "slug": "tv3"},
-    {"name": "TV9", "slug": "tv9"},
-    {"name": "TV Okey", "slug": "tv-okey"},
-    {"name": "Berita RTM", "slug": "berita-rtm"},
-    {"name": "TVNT", "slug": "tvnt"},
-    {"name": "Awesome TV", "slug": "awesome-tv"}
+    {"name": "Sukan RTM", "slug": "sukan-rtm", "group": "Sports"},
+    {"name": "TV1", "slug": "rtm-tv1-live", "group": "General"},
+    {"name": "TV2", "slug": "rtm-tv2-live", "group": "General"},
+    {"name": "TV3", "slug": "tv3", "group": "General"},
+    {"name": "TV9", "slug": "tv9", "group": "General"},
+    {"name": "TV Okey", "slug": "tv-okey", "group": "General"},
+    {"name": "Berita RTM", "slug": "berita-rtm", "group": "News + Opinion"},
+    {"name": "TVNT", "slug": "tvnt", "group": "Local TV"},
+    {"name": "Awesome TV", "slug": "awesome-tv", "group": "Entertainment"}
 ]
 
 def get_stream_url(slug):
@@ -49,11 +49,13 @@ def update_m3u():
     print(f"Processing {len(CHANNELS)} channels...")
     
     for ch in CHANNELS:
-        print(f"Processing: {ch['name']} ({ch['slug']})...")
+        group_title = ch.get("group", "Others")
+        
+        print(f"Processing: {ch['name']} [{group_title}] ({ch['slug']})...")
         url = get_stream_url(ch['slug'])
         if url:
             print(f"  -> Success: {url}")
-            m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Malaysian Channels",{ch["name"]}\n'
+            m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="{group_title}",{ch["name"]}\n'
             m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
             m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
             m3u_content += f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/\n'
