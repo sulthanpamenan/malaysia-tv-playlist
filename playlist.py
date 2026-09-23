@@ -77,15 +77,18 @@ def get_stream_url(slug):
         
         def handle_request(request):
             nonlocal stream_url
-            if any(ext in request.url for ext in [".m3u8", ".aac", ".mp3", "stream"]):
-                stream_url = request.url
+            url = request.url
+            if (".m3u8" in url or ".aac" in url) and ".js" not in url and "player-init" not in url:
+                stream_url = url
 
         page.on("request", handle_request)
         
         try:
             page.goto(target_url, timeout=30000, wait_until="domcontentloaded")
-            if not stream_url:
-                time.sleep(2)
+            for _ in range(10):
+                if stream_url:
+                    break
+                time.sleep(0.5)
         except Exception:
             pass
         finally:
@@ -94,14 +97,13 @@ def get_stream_url(slug):
     return stream_url
 
 def process_single_channel(ch):
-    print(f"Processing: {ch['name']} [{ch.get('group', 'Others')}] ({ch['slug']})...")
     url = get_stream_url(ch['slug'])
     if url:
-        print(f"  -> Success: {url}")
-        return ch, url
+        print(f"[{ch['name']}] -> Success")
+        return ch['slug'], url
     else:
-        print(f"  -> Failed to get the link for {ch['name']}")
-        return ch, None
+        print(f"[{ch['name']}] -> Failed")
+        return ch['slug'], None
 
 def update_m3u():
     m3u_content = """<!--more-->
@@ -124,31 +126,29 @@ window.location.replace("https://sulthanpamenan.github.io/malaysia-tv-playlist/"
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
     headers_suffix = f"|User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/"
     
-    print(f"Processing total {len(CHANNELS)} items (TV & Radio) with Multi-threading...")
+    print(f"Processing total {len(CHANNELS)} items with Multi-threading...")
     
     results = {}
     with ThreadPoolExecutor(max_workers=9) as executor:
         future_to_channel = {executor.submit(process_single_channel, ch): ch for ch in CHANNELS}
         for future in as_completed(future_to_channel):
-            ch, url = future.result()
+            slug, url = future.result()
             if url:
-                results[ch['slug']] = (ch, url)
+                results[slug] = url
 
     for ch in CHANNELS:
-        if ch['slug'] in results:
-            ch_data, url = results[ch['slug']]
-            group_title = ch_data.get("group", "Others")
-            tv_logo = ch_data.get("logo", "")
-            item_type = ch_data.get("type", "tv")
+        slug = ch['slug']
+        if slug in results:
+            url = results[slug]
+            group_title = ch.get("group", "Others")
+            tv_logo = ch.get("logo", "")
+            item_type = ch.get("type", "tv")
             
             if item_type == "radio":
-                m3u_content += f'#EXTINF:-1 radio="true" tvg-country="MY" tvg-logo="{tv_logo}" group-title="{group_title}",{ch_data["name"]}\n'
-                m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
-                m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
-                m3u_content += f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/\n'
+                m3u_content += f'#EXTINF:-1 radio="true" tvg-country="MY" tvg-logo="{tv_logo}" group-title="{group_title}",{ch["name"]}\n'
                 m3u_content += f'{url}{headers_suffix}\n'
             else:
-                m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="{tv_logo}" group-title="{group_title}",{ch_data["name"]}\n'
+                m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="{tv_logo}" group-title="{group_title}",{ch["name"]}\n'
                 m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
                 m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
                 m3u_content += f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/\n'
@@ -156,7 +156,7 @@ window.location.replace("https://sulthanpamenan.github.io/malaysia-tv-playlist/"
 
     with open("playlist.m3u", "w", encoding="utf-8") as f:
         f.write(m3u_content)
-    print("The unified M3U playlist has been successfully updated in parallel!")
+    print("The unified M3U playlist has been successfully updated and cleaned!")
 
 if __name__ == "__main__":
     update_m3u()
