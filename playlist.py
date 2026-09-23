@@ -16,51 +16,51 @@ CHANNELS = [
     {"name": "Bernama TV", "slug": "bernama", "group": "News + Opinion", "logo": "https://example.com/bernama.png"},
     {"name": "TV Okey", "slug": "okey", "group": "General", "logo": "https://example.com/tvokey.png"},
     {"name": "Selangor TV", "slug": "selangor", "group": "General", "logo": "https://example.com/tvokey.png"},
-    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "CNA", "slug": "cna", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "PPA KL Cup", "slug": "ppa-kl-cup", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "DW", "slug": "dw", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Arirang", "slug": "arirang", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "The Indonesia Channel", "slug": "the-indonesia-channel", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Al Jazeera", "slug": "al-jazeera", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Tennis+", "slug": "tennis", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Pickle TV", "slug": "pickle-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Cricket Gold", "slug": "cricket-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Shemaroo Bollywood Classic", "slug": "shemaroo-bollywood-classic", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Bollywood Prime", "slug": "bollywood-prime-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Bollywood Masala", "slug": "bollywood-masala-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Shemaroo Filmigaane", "slug": "shemaroo-filmigaane-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Pitaara Movie", "slug": "pitaara-movie-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Shemaroo Umang Plus", "slug": "shemaroo-umang-plus-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Miramax Movie", "slug": "miramax-movie", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "FILMRISE Movies", "slug": "filmrise-movies", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "GoUSA TV", "slug": "gousa-tv-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "euro News", "slug": "euro-news-live", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "ION NCIS", "slug": "ion-ncis", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "Nosey TV", "slug": "nosey-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "FailArmy Channel", "slug": "failarmy-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
-    {"name": "BBC News", "slug": "bbc-news-live", "group": "General", "logo": "https://example.com/tvokey.png"}
+    {"name": "TV IKIM", "slug": "ikim-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "CNA", "slug": "cna", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "PPA KL Cup", "slug": "ppa-kl-cup", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "DW", "slug": "dw", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Arirang", "slug": "arirang", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "The Indonesia Channel", "slug": "the-indonesia-channel", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Al Jazeera", "slug": "al-jazeera", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Tennis+", "slug": "tennis", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Pickle TV", "slug": "pickle-tv", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Cricket Gold", "slug": "cricket-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Shemaroo Bollywood Classic", "slug": "shemaroo-bollywood-classic", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Bollywood Prime", "slug": "bollywood-prime-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Bollywood Masala", "slug": "bollywood-masala-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Shemaroo Filmigaane", "slug": "shemaroo-filmigaane-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Pitaara Movie", "slug": "pitaara-movie-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Shemaroo Umang Plus", "slug": "shemaroo-umang-plus-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Miramax Movie", "slug": "miramax-movie", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "FILMRISE Movies", "slug": "filmrise-movies", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "GoUSA TV", "slug": "gousa-tv-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "euro News", "slug": "euro-news-live", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "ION NCIS", "slug": "ion-ncis", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "Nosey TV", "slug": "nosey-tv", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "FailArmy Channel", "slug": "failarmy-tv", "group": "General", "logo": "https://example.com/tvokey.png"},
+    {"name": "BBC News", "slug": "bbc-news-live", "group": "General", "logo": "https://example.com/tvokey.png"},
 
     # --- Radio Category ---
-    {"name": "Rakita FM", "slug": "rakita-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Hot FM", "slug": "hot-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "IKIM FM", "slug": "ikim-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Molek FM", "slug": "molek-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Eight FM", "slug": "eight-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Kool FM", "slug": "kool-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Nasional FM", "slug": "nasional-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Minnal FM", "slug": "minnal-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Ai FM", "slug": "ai-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Radio Klasik", "slug": "radio-klasik", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Sabah FM", "slug": "sabah-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Sarawak FM", "slug": "sarawak-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Bernama Radio", "slug": "bernama-radio", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
-    {"name": "Asyik FM", "slug": "asyik-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
+    {"name": "Rakita FM", "slug": "rakita-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Hot FM", "slug": "hot-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "IKIM FM", "slug": "ikim-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Molek FM", "slug": "molek-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Eight FM", "slug": "eight-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Kool FM", "slug": "kool-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Nasional FM", "slug": "nasional-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Minnal FM", "slug": "minnal-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Ai FM", "slug": "ai-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Radio Klasik", "slug": "radio-klasik", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Sabah FM", "slug": "sabah-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Sarawak FM", "slug": "sarawak-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Bernama Radio", "slug": "bernama-radio", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
+    {"name": "Asyik FM", "slug": "asyik-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"},
     {"name": "Best FM", "slug": "best-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
 ]
 
