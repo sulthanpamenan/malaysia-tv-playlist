@@ -6,14 +6,14 @@ CHANNELS = [
     {"name": "Drama Sangat", "slug": "drama-sangat", "group": "Series"},
     {"name": "RTM TV1", "slug": "rtm-tv1-live", "group": "General"},
     {"name": "Didik TV", "slug": "didik-tv-live", "group": "Education"},
-    {"name": "FIFA+", "slug": "fifa-plus", "group": "Sports"}
+    {"name": "FIFA+", "slug": "fifa-plus", "group": "Sports"},
     {"name": "TV9 Malaysia", "slug": "tv9-malaysia", "group": "General"},
     {"name": "TV2", "slug": "tv2-live", "group": "General"},
     {"name": "Al Hijrah", "slug": "al-hijrah", "group": "Religious"},
     {"name": "Sukan RTM", "slug": "sukan-rtm", "group": "Sports"},
     {"name": "Berita RTM", "slug": "berita-waliyah", "group": "News + Opinion"},
     {"name": "Bernama", "slug": "bernama", "group": "News + Opinion"},
-    {"name": "TV Okey", "slug": "okey", "group": "General"},
+    {"name": "TV Okey", "slug": "okey", "group": "General"}
 ]
 
 def get_stream_url(slug):
