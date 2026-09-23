@@ -1,5 +1,5 @@
 import time
-from flask import Flask, Response
+from flask import Flask, Response, redirect, request
 from playwright.sync_api import sync_playwright
 
 app = Flask(__name__)
@@ -26,10 +26,10 @@ def get_stream_url(slug):
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
         )
         
-        def handle_request(request):
+        def handle_request(req):
             nonlocal stream_url
-            if ".m3u8" in request.url:
-                stream_url = request.url
+            if ".m3u8" in req.url:
+                stream_url = req.url
 
         page.on("request", handle_request)
         
@@ -46,24 +46,40 @@ def get_stream_url(slug):
 
 @app.route('/playlist.m3u')
 def generate_playlist():
+    # Menggunakan domain server secara dinamis
+    server_base = request.host_url.rstrip('/')
+    
     m3u_content = "#EXTM3U\n"
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
-    headers_suffix = f"|User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/"
     
     for ch in CHANNELS:
-        url = get_stream_url(ch['slug'])
-        if url:
-            m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Malaysian Channels",{ch["name"]}\n'
-            m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
-            m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
-            m3u_content += f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/\n'
-            m3u_content += f'{url}{headers_suffix}\n'
+        # Setiap channel mengarah ke endpoint proxy /play/<slug>
+        play_url = f"{server_base}/play/{ch['slug']}"
+        headers_suffix = f"|User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/"
+        
+        m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Malaysian Channels",{ch["name"]}\n'
+        m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
+        m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
+        m3u_content += f'#KODIPROP:inputstream.adaptive.stream_headers=User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/\n'
+        m3u_content += f'{play_url}{headers_suffix}\n'
             
     return Response(m3u_content, mimetype="audio/x-mpegurl")
 
+@app.route('/play/<slug>')
+def play_channel(slug):
+    # Hanya cari token untuk 1 channel yang sedang diklik saat itu juga
+    url = get_stream_url(slug)
+    if url:
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+        headers_suffix = f"|User-Agent={user_agent}&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/"
+        final_url = f"{url}{headers_suffix}"
+        return redirect(final_url)
+    
+    return "Stream link not found or expired", 404
+
 @app.route('/')
 def home():
-    return "IPTV Dynamic Server is running! Use /playlist.m3u in your IPTV player."
+    return "IPTV Proxy Server is running!"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
