@@ -1,16 +1,61 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Sports",Sukan RTM
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=hls
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/4tyP3EoCC4M6SkNPNS9eyq49p7KV6nGaukfebcy7aGup.m3u8?expires=1790155368&token=ylolIYJOQuQdeJitl6Jvm8VNQ2Tiacd_JUiN1FnH2kQ|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",TV1
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=hls
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/6yu1vgbhwY71GV7Ju7BEkfNJZBCCjb6LYpvcPJKzxywE.m3u8?expires=1790155374&token=SLnYus-9Sa-1MBpqr1L_I0aLKNfok2ZL6QDTlMoLcSU|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",TV3
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=hls
 #KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/6zRGXhNeg6eCQHs8DgaZt3dguPPDxVZikfdXXm39tjpW.m3u8?expires=1790155392&token=MyZkPPbs7um9GaliqEpNy7vwHRHMjp1AGowllneXy5Q|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/6zRGXhNeg6eCQHs8DgaZt3dguPPDxVZikfdXXm39tjpW.m3u8?expires=1790156964&token=7UIgtXDWm1cKf6zAczl0-cdEEEX9L55aZ-oEcrfiPpc|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Series",Drama Sangat
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/4wkTJB6FQY5TYb5phy8CQ9Ah8R58j9HmDeQySVEscYV5.m3u8?expires=1790156977&token=AU51q2LOWpScU0EqG-EeC3gJ0MP71pf7dpHDaVeOw8Q|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",RTM TV1
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/6yu1vgbhwY71GV7Ju7BEkfNJZBCCjb6LYpvcPJKzxywE.m3u8?expires=1790157001&token=eQ-wgFZJ9S5HscRQeSnESkEPmE4jkeGB_iLN89S3uGQ|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Education",Didik TV
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/A4x7UH3ZN4gREeyDfmf66LmtzGdkVePvJ3G1HFLCPfUG.m3u8?expires=1790157017&token=nGyCEhFKQOhdhe4j3Q92Dkga9cZZ38gph3a_Cj72zs8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Sports",FIFA+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/5rZ2ynCRigZM3NYt8GEh9zUnm4ZvcZj9ALUZjacLXmFe.m3u8?expires=1790157040&token=jyEflJMx9kWFZYZSoiMfpdmFO9E50FsY21o8ZT1yjys|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",TV9 Malaysia
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/GRb41qqNMC1yUxfgpkTEnFM34K7spbrvPh9KEJTnyVdJ.m3u8?expires=1790157100&token=4yfEVYXycuHiahcevzxroKXZzDuExEW1vKxPBAV76Xg|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",TV2
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/9tcMbjFSDZMHxwN3HXGJYHCBRNBw5ACAcofG3kZgiHG4.m3u8?expires=1790157115&token=TzSOcH4lBwW0mxrmoC_geq2TofQHcD9xOoWzSAwHiXQ|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Religious",Al Hijrah
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/EbYCrPFsbJcfbFGUdnnv9PHsHqRr429BvDN1WXckzZMs.m3u8?expires=1790157149&token=OM--lERe16sqHvyQYNG4fQep4OSmXtBlEV4ikG7IeOY|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Sports",Sukan RTM
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/4tyP3EoCC4M6SkNPNS9eyq49p7KV6nGaukfebcy7aGup.m3u8?expires=1790157209&token=TVXFGG0iQDJ_8QX1OEBgtlkfrv_UGW0ryz5Q0lG3mT8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="News + Opinion",Berita RTM
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/Dic2ryCWJX1G5SwtqBmhmAMYX66N3zXdhtp2bB57EVaC.m3u8?expires=1790157230&token=SRChNfLDJBihrdmliGhaBYOCwpukrMXiTqMmo2KJNxA|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="News + Opinion",Bernama
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/8aw7eudWZ9nZJdrA4j59g8ZC3mEa8oMqz3T5pFUpGnch.m3u8?expires=1790157253&token=humbfKVmtBqJZmcKtjcBT5HOVe9vAn1e5mf0AkL7_Es|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="General",TV Okey
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
+https://2bfd741e.b-cdn.net/streamer/DQMUXfd8q9hFDzCfAqNy64Min7uf9z69KfAyUN8MXBjU.m3u8?expires=1790157272&token=pifCDimbRWw8WXmPp4XF8S9f1Y_AUCG-RNddf87tnOc|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
