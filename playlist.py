@@ -2,7 +2,7 @@ import time
 from playwright.sync_api import sync_playwright
 
 CHANNELS = [
-    # --- Kategori TV ---
+    # --- TV Category ---
     {"name": "TV3", "slug": "tv3-live", "group": "General", "logo": "https://example.com/tv3.png"},
     {"name": "Drama Sangat", "slug": "drama-sangat", "group": "Series", "logo": "https://example.com/drama-sangat.png"},
     {"name": "RTM TV1", "slug": "rtm-tv1-live", "group": "General", "logo": "https://example.com/rtm1.png"},
@@ -46,7 +46,7 @@ CHANNELS = [
     {"name": "FailArmy Channel", "slug": "failarmy-tv", "group": "General", "logo": "https://example.com/tvokey.png"}
     {"name": "BBC News", "slug": "bbc-news-live", "group": "General", "logo": "https://example.com/tvokey.png"}
 
-    # --- Kategori Radio ---
+    # --- Radio Category ---
     {"name": "Rakita FM", "slug": "rakita-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
     {"name": "Hot FM", "slug": "hot-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
     {"name": "IKIM FM", "slug": "ikim-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png"}
@@ -126,11 +126,11 @@ window.location.replace("https://sulthanpamenan.github.io/malaysia-tv-playlist/"
         if url:
             print(f"  -> Success: {url}")
             if item_type == "radio":
-                # Format khusus untuk radio
+                # Special format for radio
                 m3u_content += f'#EXTINF:-1 radio="true" tvg-country="MY" tvg-logo="{tv_logo}" group-title="{group_title}",{ch["name"]}\n'
                 m3u_content += f'{url}{headers_suffix}\n'
             else:
-                # Format untuk TV
+                # Format for TV
                 m3u_content += f'#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="{tv_logo}" group-title="{group_title}",{ch["name"]}\n'
                 m3u_content += '#KODIPROP:inputstreamaddon=inputstream.adaptive\n'
                 m3u_content += '#KODIPROP:inputstream.adaptive.manifest_type=hls\n'
