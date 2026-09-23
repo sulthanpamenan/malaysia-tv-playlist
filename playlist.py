@@ -2,78 +2,18 @@ import time
 from playwright.sync_api import sync_playwright
 
 CHANNELS = [
-    {
-        "name": "TV3", 
-        "slug": "tv3-live", 
-        "group": "General", 
-        "logo": "https://example.com/tv3.png"
-    },
-    {
-        "name": "Drama Sangat", 
-        "slug": "drama-sangat", 
-        "group": "Series", 
-        "logo": "https://example.com/drama-sangat.png"
-    },
-    {
-        "name": "RTM TV1", 
-        "slug": "rtm-tv1-live", 
-        "group": "General", 
-        "logo": "https://example.com/rtm1.png"
-    },
-    {
-        "name": "Didik TV", 
-        "slug": "didik-tv-live", 
-        "group": "Education", 
-        "logo": "https://example.com/didiktv.png"
-    },
-    {
-        "name": "FIFA+", 
-        "slug": "fifa-plus", 
-        "group": "Sports", 
-        "logo": "https://example.com/fifaplus.png"
-    },
-    {
-        "name": "TV9 Malaysia", 
-        "slug": "tv9-malaysia", 
-        "group": "General", 
-        "logo": "https://example.com/tv9.png"
-    },
-    {
-        "name": "TV2", 
-        "slug": "tv2-live", 
-        "group": "General", 
-        "logo": "https://example.com/tv2.png"
-    },
-    {
-        "name": "Al Hijrah", 
-        "slug": "al-hijrah", 
-        "group": "Religious", 
-        "logo": "https://example.com/alhijrah.png"
-    },
-    {
-        "name": "Sukan RTM", 
-        "slug": "sukan-rtm", 
-        "group": "Sports", 
-        "logo": "https://example.com/sukanrtm.png"
-    },
-    {
-        "name": "Berita RTM", 
-        "slug": "berita-waliyah", 
-        "group": "News + Opinion", 
-        "logo": "https://example.com/beritartm.png"
-    },
-    {
-        "name": "Bernama", 
-        "slug": "bernama", 
-        "group": "News + Opinion", 
-        "logo": "https://example.com/bernama.png"
-    },
-    {
-        "name": "TV Okey", 
-        "slug": "okey", 
-        "group": "General", 
-        "logo": "https://example.com/tvokey.png"
-    }
+    {"name": "TV3", "slug": "tv3-live", "group": "General", "logo": "https://example.com/tv3.png"},
+    {"name": "Drama Sangat", "slug": "drama-sangat", "group": "Series", "logo": "https://example.com/drama-sangat.png"},
+    {"name": "RTM TV1", "slug": "rtm-tv1-live", "group": "General", "logo": "https://example.com/rtm1.png"},
+    {"name": "Didik TV", "slug": "didik-tv-live", "group": "Education", "logo": "https://example.com/didiktv.png"},
+    {"name": "FIFA+", "slug": "fifa-plus", "group": "Sports", "logo": "https://example.com/fifaplus.png"},
+    {"name": "TV9 Malaysia", "slug": "tv9-malaysia", "group": "General", "logo": "https://example.com/tv9.png"},
+    {"name": "TV2", "slug": "tv2-live", "group": "General", "logo": "https://example.com/tv2.png"},
+    {"name": "Al Hijrah", "slug": "al-hijrah", "group": "Religious", "logo": "https://example.com/alhijrah.png"},
+    {"name": "Sukan RTM", "slug": "sukan-rtm", "group": "Sports", "logo": "https://example.com/sukanrtm.png"},
+    {"name": "Berita RTM", "slug": "berita-waliyah", "group": "News + Opinion", "logo": "https://example.com/beritartm.png"},
+    {"name": "Bernama", "slug": "bernama", "group": "News + Opinion", "logo": "https://example.com/bernama.png"},
+    {"name": "TV Okey", "slug": "okey", "group": "General", "logo": "https://example.com/tvokey.png"}
 ]
 
 def get_stream_url(slug):
@@ -105,7 +45,6 @@ def get_stream_url(slug):
     return stream_url
 
 def update_m3u():
-    # Menambahkan tag HTML redirect dan catatan hak cipta di awal file M3U
     m3u_content = """<!--more-->
 <html>
 <head>
