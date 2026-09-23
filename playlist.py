@@ -78,14 +78,15 @@ def get_stream_url(slug):
         def handle_request(request):
             nonlocal stream_url
             url = request.url
-            if (".m3u8" in url or ".aac" in url) and ".js" not in url and "player-init" not in url:
-                stream_url = url
+            if ".m3u8" in url and not any(ext in url for ext in [".aac", ".ts", ".mp3", ".js", "player-init"]):
+                if not stream_url or "streamer/" in url:
+                    stream_url = url
 
         page.on("request", handle_request)
         
         try:
             page.goto(target_url, timeout=30000, wait_until="domcontentloaded")
-            for _ in range(10):
+            for _ in range(12):
                 if stream_url:
                     break
                 time.sleep(0.5)
