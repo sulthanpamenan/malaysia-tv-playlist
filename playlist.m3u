@@ -1,11 +1,1 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Sports",Sukan+
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=hls
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/4tyP3EoCC4M6SkNPNS9eyq49p7KV6nGaukfebcy7aGup.m3u8?expires=1790141598&token=sf92P28feAmkw6cypfT6PYhzi5l5kZyMqLqw4_znhtU|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="Sports",TV3
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=hls
-#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
-https://2bfd741e.b-cdn.net/streamer/6zRGXhNeg6eCQHs8DgaZt3dguPPDxVZikfdXXm39tjpW.m3u8?expires=1790141606&token=HPgjxZahy25QuN5Mv8PX0GWpsZfByrVvV6xfFgr1RDo|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36&Origin=https://malaysia-tv.net&Referer=https://malaysia-tv.net/
