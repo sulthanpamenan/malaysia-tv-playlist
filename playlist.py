@@ -16,7 +16,7 @@ CHANNELS = [
     {"name": "RTM World", "slug": "berita-waliyah", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News%20+%20Opinion/RTM%20World.png", "type": "tv"},
     {"name": "Bernama TV", "slug": "bernama", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News%20+%20Opinion/Bernama%20TV.png", "type": "tv"},
     {"name": "Okey", "slug": "okey", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/Okey.png", "type": "tv"},
-    {"name": "Selangor TV", "slug": "selangor", "group": "Local", "logo": "", "type": "tv"},
+    {"name": "Selangor TV", "slug": "selangor", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/Selangor%20TV%20-%20white.png", "type": "tv"},
     {"name": "TV IKIM", "slug": "ikim-live", "group": "Religious", "logo": "", "type": "tv"},
     {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/8TV.png", "type": "tv"},
     {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "Local", "logo": "", "type": "tv"},
