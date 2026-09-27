@@ -18,7 +18,7 @@ CHANNELS = [
     {"name": "Okey", "slug": "okey", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/Okey.png", "type": "tv"},
     {"name": "TV IKIM", "slug": "ikim-live", "group": "Religious", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Religious/TV%20IKIM.png", "type": "tv"},
     {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/8TV.png", "type": "tv"},
-    {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "Local", "logo": "", "type": "tv"},
+    {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/TV%20Sarawak.png", "type": "tv"},
     {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "Sports", "logo": "", "type": "tv"},
     {"name": "CNA", "slug": "cna", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News%20+%20Opinion/CNA.png", "type": "tv"},
     {"name": "PPA KL Cup", "slug": "ppa-kl-cup", "group": "Live Events", "logo": "", "type": "tv"},
