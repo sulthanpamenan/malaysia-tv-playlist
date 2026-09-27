@@ -20,7 +20,7 @@ CHANNELS = [
     {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/8TV.png", "type": "tv"},
     {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/TV%20Sarawak.png", "type": "tv"},
     {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/MPL%20Malaysia.png", "type": "tv"},
-    {"name": "PPA KL Cup", "slug": "ppa-kl-cup", "group": "Live Events", "logo": "", "type": "tv"},
+    {"name": "PPA Asia Tier Badges KL Cup", "slug": "ppa-kl-cup", "group": "Live Events", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Live%20Events/PPA%20Asia%20Tier%20Badges%20KL%20Cup.png", "type": "tv"},
     {"name": "DW", "slug": "dw", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News%20+%20Opinion/DW-TV.png", "type": "tv"},
     {"name": "Arirang", "slug": "arirang", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Entertainment/Arirang%20TV.png", "type": "tv"},
     {"name": "The Indonesia Channel", "slug": "the-indonesia-channel", "group": "General", "logo": "", "type": "tv"},
