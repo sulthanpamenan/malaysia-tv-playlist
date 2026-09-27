@@ -23,7 +23,7 @@ CHANNELS = [
     {"name": "PPA Asia Tier Badges KL Cup", "slug": "ppa-kl-cup", "group": "Live Events", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Live%20Events/PPA%20Asia%20Tier%20Badges%20KL%20Cup.png", "type": "tv"},
     {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN%20Sports%201.png", "type": "tv"},
     {"name": "Tennis+", "slug": "tennis", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Tennis+.png", "type": "tv"},
-    {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "", "type": "tv"},
+    {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Pickle%20TV.png", "type": "tv"},
     {"name": "Cricket Gold", "slug": "cricket-live", "group": "Sports", "logo": "", "type": "tv"},
     {"name": "Shemaroo Bollywood Classic", "slug": "shemaroo-bollywood-classic", "group": "Classic TV", "logo": "", "type": "tv"},
     {"name": "Bollywood Prime", "slug": "bollywood-prime-live", "group": "Movies", "logo": "", "type": "tv"},
