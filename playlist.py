@@ -20,7 +20,7 @@ CHANNELS = [
     {"name": "8 TV", "slug": "8-tv", "group": "General", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/General/8TV.png", "type": "tv"},
     {"name": "TV Sarawak", "slug": "tv-sarawak-live", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/TV%20Sarawak.png", "type": "tv"},
     {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/MPL%20Malaysia.png", "type": "tv"},
-    {"name": "PPA Asia Tier Badges KL Cup", "slug": "ppa-kl-cup", "group": "Live Events", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Live%20Events/PPA%20Asia%20Tier%20Badges%20KL%20Cup.png", "type": "tv"},
+    {"name": "PPA Asia Tier Badges KL Cup", "slug": "ppa-kl-cup", "group": "Live Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Live%20Events/PPA%20Asia%20Tier%20Badges%20KL%20Cup.png", "type": "tv"},
     {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN%20Sports%201.png", "type": "tv"},
     {"name": "Tennis+", "slug": "tennis", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Tennis+.png", "type": "tv"},
     {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Pickle%20TV%20-%20white.png", "type": "tv"},
