@@ -22,7 +22,10 @@ CHANNELS = [
     {"name": "MPL Malaysia", "slug": "mpl-malaysia", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/MPL%20Malaysia.png", "type": "tv"},
     {"name": "Free Movies", "slug": "free-movies", "group": "Movies", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Movies/Free%20Movies.png", "type": "tv"},
     {"name": "PPA Asia Tier Badges KL Cup", "slug": "ppa-kl-cup", "group": "Live Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Live%20Events/PPA%20Asia%20Tier%20Badges%20KL%20Cup.png", "type": "tv"},
-    {"name": "Siara TV", "slug": "siara-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN%20Sports%201.png", "type": "tv"},
+    {"name": "Siara TV", "slug": "siara-tv", "group": "Testing", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Testing/Siara%20TV.png", "type": "tv"},
+    {"name": "MySports", "slug": "mysport", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/MySports.png", "type": "tv"},
+    {"name": "USIM TV", "slug": "usim-tv", "group": "Education", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Education/USIM%20TV.png", "type": "tv"},
+    {"name": "Borneo TV", "slug": "borneo-tv", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/Borneo%20TV.png", "type": "tv"},
     {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN%20Sports%201.png", "type": "tv"},
     {"name": "Tennis+", "slug": "tennis", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Tennis+.png", "type": "tv"},
     {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Pickle%20TV%20-%20white.png", "type": "tv"},
@@ -43,6 +46,8 @@ CHANNELS = [
     {"name": "BBC News", "slug": "bbc-news-live", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News%20+%20Opinion/BBC%20News.png", "type": "tv"},
 
     # --- Radio Category ---
+    {"name": "Manis FM", "slug": "manis-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Manis%20FM.png", "type": "radio"},
+    {"name": "Suria FM", "slug": "suria-fm", "group": "Radio - Malaysia", "logo": "", "type": "radio"},
     {"name": "Rakita FM", "slug": "rakita-fm", "group": "Radio - Malaysia", "logo": "", "type": "radio"},
     {"name": "Hot FM", "slug": "hot-fm", "group": "Radio - Malaysia", "logo": "", "type": "radio"},
     {"name": "IKIM FM", "slug": "ikim-fm", "group": "Radio - Malaysia", "logo": "", "type": "radio"},
