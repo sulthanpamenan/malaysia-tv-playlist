@@ -49,7 +49,6 @@ CHANNELS = [
     {"name": "Manis FM", "slug": "manis-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Manis%20FM.png", "type": "radio"},
     {"name": "Suria FM", "slug": "suria-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Suria%20FM.png"", "type": "radio"},
     {"name": "Fly FM", "slug": "fly-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Fly%20FM.png", "type": "radio"},
-    {"name": "Rakita FM", "slug": "rakita-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Rakita%20FM.png", "type": "radio"},
     {"name": "Hot FM", "slug": "hot-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Hot%20FM.png", "type": "radio"},
     {"name": "IKIM FM", "slug": "ikim-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/IKIM%20FM.png", "type": "radio"},
     {"name": "Molek FM", "slug": "molek-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Molek%20FM.png", "type": "radio"},
@@ -58,14 +57,12 @@ CHANNELS = [
     {"name": "Nasional FM", "slug": "nasional-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Nasional%20FM.png", "type": "radio"},
     {"name": "TraXX FM", "slug": "traxx-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/TraXX%20FM.png", "type": "radio"},
     {"name": "Minnal FM", "slug": "minnal-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Minnal%20FM.png", "type": "radio"},
-    {"name": "Ai FM", "slug": "ai-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Ai%20FM.png", "type": "radio"},
     {"name": "Radio Klasik", "slug": "radio-klasik", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Radio%20Klasik.png", "type": "radio"},
     {"name": "Sabah FM", "slug": "sabah-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Sabah%20FM.png", "type": "radio"},
-    {"name": "Sabah-V FM", "slug": "sabah-v-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Sabah-V%20FM.png", "type": "radio"},
+    {"name": "Sabah VFM", "slug": "sabah-v-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Sabah%20VFM.png", "type": "radio"},
     {"name": "Sarawak FM", "slug": "sarawak-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Sarawak%20FM.png", "type": "radio"},
     {"name": "Bernama Radio", "slug": "bernama-radio", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Bernama%20Radio.png", "type": "radio"},
     {"name": "Wai FM", "slug": "wai-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Wai%20FM.png", "type": "radio"},
-    {"name": "Asyik FM", "slug": "asyik-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Asyik%20FM.png", "type": "radio"},
     {"name": "Best FM", "slug": "best-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Best%20FM.png", "type": "radio"}
 ]
 
