@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from playwright.sync_api import sync_playwright
 
 GIST_ID = os.environ.get("GIST_ID", "0489abda2da5420f8f4da73add29b134")
-MY_TOKEN = os.environ.get("MY_TOKEN")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") 
 GIST_FILENAME = os.environ.get("GIST_FILENAME", "malaysia_tv.json")
 GIST_API_URL = f"https://api.github.com/gists/{GIST_ID}"
 
@@ -112,7 +112,7 @@ def process_single_channel(ch):
 
 def save_gist_tokens(tokens):
     headers = {
-        "Authorization": f"Bearer {MY_TOKEN}",
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json",
         "Content-Type": "application/json"
     }
