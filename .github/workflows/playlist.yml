@@ -26,4 +26,8 @@ jobs:
           playwright install chromium
 
       - name: Run Fetcher Script
+        env:
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIST_FILENAME: "malaysia_tv.json"
         run: python fetcher.py
