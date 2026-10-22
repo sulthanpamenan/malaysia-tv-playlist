@@ -8,9 +8,6 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -27,7 +24,4 @@ jobs:
           playwright install chromium
 
       - name: Run Fetcher Script
-        run: python playlist.py
-
-      - name: Commit and Push Changes
         run: python fetcher.py
