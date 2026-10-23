@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from playwright.sync_api import sync_playwright
 
 GIST_ID = os.environ.get("GIST_ID", "6055fb9a0d9c3754edc6cf956cdbf762")
-GITHUB_TOKEN = os.environ.get("MY_TOKEN") 
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN") 
 GIST_FILENAME = os.environ.get("GIST_FILENAME", "malaysia_tv.json")
 GIST_API_URL = f"https://api.github.com/gists/{GIST_ID}"
 
