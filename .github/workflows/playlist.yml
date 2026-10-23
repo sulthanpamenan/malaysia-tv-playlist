@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Fetcher Script
         env:
-          GIST_ID: ${{ secrets.GIST_ID }}
+          GIST_ID: "6055fb9a0d9c3754edc6cf956cdbf762"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIST_FILENAME: "malaysia_tv.json"
         run: python fetcher.py
