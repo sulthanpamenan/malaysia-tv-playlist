@@ -41,7 +41,7 @@ CHANNELS = [
     {"name": "Bollywood Prime", "slug": "bollywood-prime-live", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "Bollywood Masala", "slug": "bollywood-masala-live", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "Shemaroo Filmigaane", "slug": "shemaroo-filmigaane-live", "group": "Music Videos", "logo": "", "type": "tv"},
-    {"name": "Pitaara", "slug": "pitaara-movie-live", "group": "Movies", "logo": "", "type": "tv"},
+    {"name": "Pitaara Movies", "slug": "pitaara-movie-live", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "Shemaroo Umang Plus", "slug": "shemaroo-umang-plus-live", "group": "Drama", "logo": "", "type": "tv"},
     {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "Music Videos", "logo": "", "type": "tv"},
     {"name": "Miramax Movie", "slug": "miramax-movie", "group": "Movies", "logo": "", "type": "tv"},
