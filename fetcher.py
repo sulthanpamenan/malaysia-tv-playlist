@@ -47,7 +47,6 @@ CHANNELS = [
     {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "Music Videos", "logo": "", "type": "tv"},
     {"name": "FILMRISE Movies", "slug": "filmrise-movies", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "GoUSA TV", "slug": "gousa-tv-live", "group": "Lifestyle", "logo": "", "type": "tv"},
-    {"name": "BBC News", "slug": "bbc-news-live", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News_+_Opinion/BBC_News.png", "type": "tv"},
 
     # --- Radio Category ---
     {"name": "Manis FM", "slug": "manis-fm", "group": "Radio - Malaysia", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Radio/Manis_FM.png", "type": "radio"},
