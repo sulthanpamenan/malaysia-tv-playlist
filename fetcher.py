@@ -43,7 +43,6 @@ CHANNELS = [
     {"name": "Shemaroo Filmigaane", "slug": "shemaroo-filmigaane-live", "group": "Music Videos", "logo": "", "type": "tv"},
     {"name": "Shemaroo Umang Plus", "slug": "shemaroo-umang-plus-live", "group": "Drama", "logo": "", "type": "tv"},
     {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "Music Videos", "logo": "", "type": "tv"},
-    {"name": "Miramax Movie", "slug": "miramax-movie", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "FILMRISE Movies", "slug": "filmrise-movies", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "GoUSA TV", "slug": "gousa-tv-live", "group": "Lifestyle", "logo": "", "type": "tv"},
     {"name": "euro News", "slug": "euro-news-live", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News_+_Opinion/Euronews.png", "type": "tv"},
