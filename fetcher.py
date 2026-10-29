@@ -34,6 +34,7 @@ CHANNELS = [
     {"name": "MySports", "slug": "mysport", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/MySports.png", "type": "tv"},
     {"name": "USIMTV", "slug": "usim-tv", "group": "Education", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Education/USIMTV.png", "type": "tv"},
     {"name": "Borneo TV", "slug": "borneo-tv", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/Borneo_TV.png", "type": "tv"},
+    {"name": "ION", "slug": "ion-ncis", "group": "True Crime", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/True_Crime/ION.png", "type": "tv"},
     {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN_Sports_1.png", "type": "tv"},
     {"name": "Tennis+", "slug": "tennis", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Tennis+.png", "type": "tv"},
     {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Pickle_TV_-_white.png", "type": "tv"},
@@ -45,9 +46,6 @@ CHANNELS = [
     {"name": "Mastiii TV", "slug": "mastiii-tv-live", "group": "Music Videos", "logo": "", "type": "tv"},
     {"name": "FILMRISE Movies", "slug": "filmrise-movies", "group": "Movies", "logo": "", "type": "tv"},
     {"name": "GoUSA TV", "slug": "gousa-tv-live", "group": "Lifestyle", "logo": "", "type": "tv"},
-    {"name": "euro News", "slug": "euro-news-live", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News_+_Opinion/Euronews.png", "type": "tv"},
-    {"name": "ION NCIS", "slug": "ion-ncis", "group": "Drama", "logo": "", "type": "tv"},
-    {"name": "Nosey TV", "slug": "nosey-tv", "group": "Entertainment", "logo": "", "type": "tv"},
     {"name": "FailArmy Channel", "slug": "failarmy-tv", "group": "Comedy", "logo": "", "type": "tv"},
     {"name": "BBC News", "slug": "bbc-news-live", "group": "News + Opinion", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/News_+_Opinion/BBC_News.png", "type": "tv"},
 
