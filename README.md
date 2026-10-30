@@ -10,64 +10,64 @@ Directly import these URLs into your preferred IPTV client:
 
 | Resource | URL |
 | :--- | :--- |
-| **Playlist (M3U)** | `http://<your-server-ip>:5001/playlist.m3u` *(atau gunakan URL deployment publik Anda)* |
+| **Playlist (M3U)** | `http://<your-server-ip>:5001/playlist.m3u` *(or use your public URL distribution)* |
 
 ---
 
-## 💻 Menjalankan Server Sendiri di Lokal (`proxy.py`)
+## 💻 Running Your Own Server Locally (`proxy.py`)
 
-Jika Anda ingin menghosting dan menjalankan server proxy sendiri secara lokal menggunakan skrip yang tersedia, ikuti langkah-langkah berikut:
+If you would like to host and run your own proxy server locally using the available scripts, follow these steps:
 
-1. Pastikan Anda telah menginstal Python di komputer lokal Anda.
-2. Instal dependensi yang diperlukan dengan menjalankan perintah berikut di terminal:
+1. Ensure that you have installed Python on your local computer.
+2. Install the required dependencies by running the following command in the terminal:
    pip install flask requests
-3. Atur environment variable yang dibutuhkan (seperti `GITHUB_TOKEN` dan `GIST_ID` jika diperlukan) atau biarkan menggunakan konfigurasi default.
-4. Jalankan skrip server lokal:
+3. Set the required environment variables (such as `GITHUB_TOKEN` and `GIST_ID`, if needed) or simply use the default configuration.
+4. Run the local server script:
    python proxy.py
-5. Server akan aktif dan dapat diakses pada port `5001` (`http://localhost:5001/playlist.m3u`).
+5. The server will be active and accessible on port `5001` (`http://localhost:5001/playlist.m3u`).
 
 ---
 
-## 🛠️ Fitur & Keunggulan
+## 🛠️ Features & Benefits
 
-- **Automated Token Handling**: Pengambilan tautan streaming dinamis secara otomatis dari penyimpanan Gist.
-- **Dynamic Proxy**: Mendukung *proxying* segmen aliran video HLS secara real-time.
-- **Multi-Category Support**: Menyediakan berbagai kategori siaran TV dan Radio Malaysia secara terpusat.
-- **High Compatibility**: Kompatibel dengan berbagai aplikasi pemutar IPTV populer di Android TV, seluler, maupun desktop.
-
----
-
-## 📱 Cara Menggunakan di Pemutar IPTV
-
-1. Buka aplikasi Pemutar IPTV pilihan Anda (misalnya **OTT Navigator** atau **TiviMate**).
-2. Tambahkan sumber playlist baru menggunakan **URL Playlist M3U** Anda.
-3. Segarkan/muat ulang playlist, lalu nikmati siaran langsungnya!
+- **Automated Token Handling**: Automatic retrieval of dynamic streaming links from Gist storage.
+- **Dynamic Proxy**: Supports real-time *proxying* of HLS video stream segments.
+- **Multi-Category Support**: Provides a centralized collection of various categories of Malaysian TV and radio broadcasts.
+- **High Compatibility**: Compatible with various popular IPTV player applications on Android TV, mobile, and desktop.
 
 ---
 
-## ⚠️ Penafian (Disclaimer)
+## 📱 How to Use on an IPTV Player
 
-Repositori ini dan layanan proxy otomatisnya disediakan secara ketat untuk tujuan edukasi, pribadi, dan non-komersial.
-
-- **Kepemilikan Konten:** Semua aliran video, nama saluran, logo, serta hak kekayaan intelektual sepenuhnya adalah milik dari pemegang hak cipta masing-masing.
-- **Tanpa Penyimpanan (No Hosting):** Layanan ini tidak menyimpan atau menyiarkan ulang file media secara ilegal, melainkan bertindak murni sebagai pengurai dinamis dan *reverse-proxy* untuk tautan publik.
-- **Ketersediaan Layanan:** Pengembang tidak memberikan garansi apa pun terkait waktu aktif (*uptime*) aliran, kualitas video, atau kelancaran pemutaran, karena performa bergantung sepenuhnya pada ketersediaan sumber pihak ketiga.
+1. Open your preferred IPTV player app (for example, **OTT Navigator** or **TiviMate**).
+2. Add a new playlist source using your **M3U Playlist URL**.
+3. Refresh/reload the playlist, then enjoy the live broadcast!
 
 ---
 
-## 📄 Lisensi
+## ⚠️ Disclaimer
 
-Didistribusikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk informasi lebih lanjut.
+This repository and its automated proxy service are provided strictly for educational, personal, and non-commercial purposes.
+
+- **Content Ownership:** All video streams, channel names, logos, and intellectual property rights are the sole property of their respective copyright holders.
+- **No Hosting:** This service does not store or illegally re-broadcast media files; instead, it functions purely as a dynamic parser and reverse-proxy for public links.
+- **Service Availability:** The developer provides no guarantees whatsoever regarding stream uptime, video quality, or playback smoothness, as performance depends entirely on the availability of third-party sources.
 
 ---
 
-## ☕ Dukung Pengembang
+## 📄 License
 
-Jika proyek ini bermanfaat bagi Anda, pertimbangkan untuk mendukung pengembang agar layanan ini tetap aktif dan terpelihara!
+Distributed under the MIT License. See the `LICENSE` file for more information.
+
+---
+
+## ☕ Support the Developer
+
+If this project is useful to you, consider supporting the developer so that this service can remain active and maintained!
 
 <div align="center">
 
-### 🇮🇩 Donasi Lokal (QRIS / E-Wallet / Mobile Banking)
+### 🇮🇩 Local Donations (QRIS / E-Wallet / Mobile Banking)
 
 <a href="[https://saweria.co/sulthanpamenan](https://saweria.co/sulthanpamenan)" target="_blank">
   <img width="290" height="290" alt="Saweria" src="[https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0](https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0)" />
@@ -75,7 +75,7 @@ Jika proyek ini bermanfaat bagi Anda, pertimbangkan untuk mendukung pengembang a
 
 <br>
 
-*Pindai kode QRIS di atas menggunakan GoPay, DANA, OVO, ShopeePay, LinkAja, atau Mobile Banking.*
+*Scan the QRIS code above using GoPay, DANA, OVO, ShopeePay, LinkAja, or Mobile Banking.*
 
 <br>
 
@@ -85,7 +85,7 @@ Jika proyek ini bermanfaat bagi Anda, pertimbangkan untuk mendukung pengembang a
 
 ---
 
-### 🌐 Donasi Internasional
+### 🌐 International Donations
 
 <a href="[https://buymeacoffee.com/sulthanpamenan](https://buymeacoffee.com/sulthanpamenan)" target="_blank">
   <img src="[https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee)" alt="Buy Me A Coffee">
