@@ -63,14 +63,14 @@ Distributed under the MIT License. See the `LICENSE` file for more information.
 
 ## ☕ Support the Developer
 
-If this project is useful to you, consider supporting the developer so that this service can remain active and maintained!
+If this project is helpful to you, consider supporting the developer to keep this service maintained and running!
 
 <div align="center">
 
-### 🇮🇩 Local Donations (QRIS / E-Wallet / Mobile Banking)
+### 🇮🇩 Local Donation (QRIS / E-Wallet / Mobile Banking)
 
-<a href="[https://saweria.co/sulthanpamenan](https://saweria.co/sulthanpamenan)" target="_blank">
-  <img width="290" height="290" alt="Saweria" src="[https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0](https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0)" />
+<a href="https://saweria.co/sulthanpamenan" target="_blank">
+  <img width="290" height="290" alt="Saweria" src="https://github.com/user-attachments/assets/f2846d1f-a391-4daf-9ce5-a48aadc992a0" />
 </a>
 
 <br>
@@ -79,16 +79,16 @@ If this project is useful to you, consider supporting the developer so that this
 
 <br>
 
-<a href="[https://saweria.co/sulthanpamenan](https://saweria.co/sulthanpamenan)" target="_blank">
-  <img src="[https://img.shields.io/badge/Saweria-Support_Project-orange?style=for-the-badge&logo=coffee](https://img.shields.io/badge/Saweria-Support_Project-orange?style=for-the-badge&logo=coffee)" alt="Support via Saweria">
+<a href="https://saweria.co/sulthanpamenan" target="_blank">
+  <img src="https://img.shields.io/badge/Saweria-Support_Project-orange?style=for-the-badge&logo=coffee" alt="Support via Saweria">
 </a>
 
 ---
 
-### 🌐 International Donations
+### 🌐 International Donation
 
-<a href="[https://buymeacoffee.com/sulthanpamenan](https://buymeacoffee.com/sulthanpamenan)" target="_blank">
-  <img src="[https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee)" alt="Buy Me A Coffee">
+<a href="https://buymeacoffee.com/sulthanpamenan" target="_blank">
+  <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-Donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="Buy Me A Coffee">
 </a>
 
 </div>
