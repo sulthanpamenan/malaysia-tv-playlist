@@ -20,10 +20,10 @@ If you would like to host and run your own proxy server locally using the availa
 
 1. Ensure that you have installed Python on your local computer.
 2. Install the required dependencies by running the following command in the terminal:
-   pip install flask requests
+   *pip install flask requests*
 3. Set the required environment variables (such as `GITHUB_TOKEN` and `GIST_ID`, if needed) or simply use the default configuration.
 4. Run the local server script:
-   python proxy.py
+   *python proxy.py*
 5. The server will be active and accessible on port `5001` (`http://localhost:5001/playlist.m3u`).
 
 ---
