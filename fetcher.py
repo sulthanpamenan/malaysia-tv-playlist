@@ -35,7 +35,6 @@ CHANNELS = [
     {"name": "USIMTV", "slug": "usim-tv", "group": "Education", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Education/USIMTV.png", "type": "tv"},
     {"name": "Borneo TV", "slug": "borneo-tv", "group": "Local", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Local/Borneo_TV.png", "type": "tv"},
     {"name": "ION", "slug": "ion-ncis", "group": "True Crime", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/True_Crime/ION.png", "type": "tv"},
-    {"name": "FailArmy", "slug": "failarmy-tv", "group": "Comedy", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Comedy/FailArmy.png", "type": "tv"},
     {"name": "BeIN Sports 1", "slug": "being-sports-1", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/beIN_Sports_1.png", "type": "tv"},
     {"name": "Tennis+", "slug": "tennis", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Tennis+.png", "type": "tv"},
     {"name": "Pickle TV", "slug": "pickle-tv", "group": "Sports", "logo": "https://raw.githubusercontent.com/sulthanpamenan/IPTV_Master/main/Logos/Sports/Pickle_TV_-_white.png", "type": "tv"},
