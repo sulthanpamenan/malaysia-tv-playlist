@@ -46,8 +46,8 @@ CHANNELS = [
 ]
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
-GIST_ID = os.environ.get("GIST_ID", "GIST_ID")
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "GITHUB_TOKEN")
+GIST_ID = os.environ.get("GIST_ID", "6055fb9a0d9c3754edc6cf956cdbf762")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 GIST_FILENAME = "malaysia_tv.json"
 GIST_API_URL = f"https://api.github.com/gists/{GIST_ID}"
 
